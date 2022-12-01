@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ShopController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('api1/parser', [ShopController::class, 'parsingDataFiles']);
+Route::get('{any?}', [ ShopController::class , 'index' ] );
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });
