@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\ShopController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\ShopController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,12 +16,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
 
-// народнаяэкономика.рф
-// Route::domain('xn--80aaaovlboecchebw6s7a.xn--p1ai')->group(function () {
-// Route::post('sendOrder', [SendMsgController::class, 'sendTelegramm']);
 Route::get('parser', [ShopController::class, 'parsingDataFiles']);
-// });
