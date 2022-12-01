@@ -26,6 +26,11 @@ class ShopController extends Controller
         return view('index', $in);
     }
 
+
+
+
+
+    
     /**
      * Show the form for creating a new resource.
      *
