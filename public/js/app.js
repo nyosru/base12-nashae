@@ -14477,7 +14477,7 @@ __webpack_require__.r(__webpack_exports__);
   setup: function setup(props) {
     // const good = ref([]);
     // const pageData = ref([]);
-    var searchString = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)("");
+    var searchString = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)('');
 
     // // loading.value = false;
     // axios
@@ -14507,8 +14507,8 @@ __webpack_require__.r(__webpack_exports__);
       // listData.value = pageData.value.filter(e => e.naimenovanie.toLowerCase().indexOf(searchString.value.toLowerCase()) >= 0));
       // let res = users.filter(it => new RegExp('oli', "i").test(it.name));
 
-      var str1 = "";
-      var str2 = "";
+      var str1 = '';
+      var str2 = '';
 
       // listData.value = pageData.value;
       if (pageData.value && pageData.value.length) {
@@ -14555,9 +14555,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/lib/axios.js");
 /* harmony import */ var _use_Vitrin_ts__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../use/Vitrin.ts */ "./resources/js/use/Vitrin.ts");
 
-// import axios from "axios";
+
 
 // import VitrinRow from "./VitrinRow.vue";
 
@@ -14653,7 +14654,7 @@ __webpack_require__.r(__webpack_exports__);
       console.log(good.value);
       // sendToTelegramm(123123123);
 
-      axios.post("/api/sendOrder", {
+      axios__WEBPACK_IMPORTED_MODULE_2__["default"].post("/api/sendOrder", {
         goods: good.value,
         fio: fio.value,
         phone: phone.value
@@ -14754,13 +14755,13 @@ __webpack_require__.r(__webpack_exports__);
     // const ru = new Intl.NumberFormat("ru").format(amount);
 
     var showPrice1 = (0,vue__WEBPACK_IMPORTED_MODULE_0__.computed)(function () {
-      return new Intl.NumberFormat("ru").format(Math.ceil(props.el.cena1));
+      return new Intl.NumberFormat('ru').format(Math.ceil(props.el.cena1));
     });
     var showPrice2 = (0,vue__WEBPACK_IMPORTED_MODULE_0__.computed)(function () {
-      return new Intl.NumberFormat("ru").format(Math.ceil(props.el.cena2));
+      return new Intl.NumberFormat('ru').format(Math.ceil(props.el.cena2));
     });
     var showPrice3 = (0,vue__WEBPACK_IMPORTED_MODULE_0__.computed)(function () {
-      return new Intl.NumberFormat("ru").format(Math.ceil(props.el.cena3));
+      return new Intl.NumberFormat('ru').format(Math.ceil(props.el.cena3));
     });
     return {
       good: good,
@@ -16926,7 +16927,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "pre {\n  max-height: 300px;\n  overflow: auto;\n}\n.list_head,\n.table thead {\n  position: -moz-sticky;\n  position: -ms-sticky;\n  position: -o-sticky;\n  position: sticky;\n  top: 40px;\n  background-color: rgba(255, 255, 255, 0.8);\n  z-index: 200;\n}\n.item {\n  margin-top: 3px;\n  margin-bottom: 3px;\n}\n.item:nth-child(2n) {\n  background-color: rgba(0, 0, 0, 0.1);\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "pre {\n  max-height: 300px;\n  overflow: auto;\n}\n.item {\n  margin-top: 3px;\n  margin-bottom: 3px;\n}\n.item:nth-child(2n) {\n  background-color: rgba(0, 0, 0, 0.1);\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -16998,7 +16999,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n\t/* GLOBAL STYLES */\nbody {\n\t\tfont-family: system-ui;\n}\na,\n\ta:hover {\n\t\ttext-decoration: none;\n}\nul {\n\t\tlist-style: none;\n}\n\t/* CUSTOM STYLES */\nheader {\n\t\tbackground: rgb(0, 0, 0);\n}\nnav {\n\t\tdisplay: flex;\n\t\tjustify-content: space-between;\n\t\talign-items: center;\n\t\twidth: 1200px;\n\t\theight: 70px;\n\t\tmargin: auto;\n}\nnav h1.brand a {\n\t\tfont-size: 24pt;\n\t\tcolor: rgb(255, 255, 255);\n}\nnav ul {\n\t\tdisplay: flex;\n\t\tmargin: 0;\n}\nnav ul li a {\n\t\tbackground: #292929;\n\t\tcolor: white;\n\t\tpadding: 10px 20px;\n\t\tmargin: 0px 10px;\n}\nnav ul li a:hover,\n\tnav ul li a.router-link-exact-active {\n\t\tcolor: white;\n\t\tborder-bottom: 2px solid;\n}\nfooter {\n\t\tbackground: #d8d8d8;\n\t\tposition: absolute;\n\t\tbottom: 0;\n\t\twidth: 100%;\n}\n.main {\n\t\tdisplay: flex;\n\t\theight: 500px;\n\t\talign-items: center;\n}\nfooter p {\n\t\tmargin: 0;\n\t\tpadding: 10px;\n\t\ttext-align: center;\n}\nfooter span {\n\t\tcolor: red;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n\t/* GLOBAL STYLES */\nbody {\n\t\tfont-family: system-ui;\n}\na,\n\ta:hover {\n\t\ttext-decoration: none;\n}\nul {\n\t\tlist-style: none;\n}\n\t/* CUSTOM STYLES */\nheader {\n\t\tbackground: rgb(0, 0, 0);\n}\nnav {\n\t\tdisplay: flex;\n\t\tjustify-content: space-between;\n\t\talign-items: center;\n\t\twidth: 1200px;\n\t\theight: 70px;\n\t\tmargin: auto;\n}\nnav h1.brand a {\n\t\tfont-size: 24pt;\n\t\tcolor: rgb(255, 255, 255);\n}\nnav ul {\n\t\tdisplay: flex;\n\t\tmargin: 0;\n}\nnav ul li a {\n\t\tbackground: #292929;\n\t\tcolor: white;\n\t\tpadding: 10px 20px;\n\t\tmargin: 0px 10px;\n}\nnav ul li a:hover,\n\tnav ul li a.router-link-exact-active {\n\t\tcolor: white;\n\t\tborder-bottom: 2px solid;\n}\nfooter {\n\t\tbackground: #d8d8d8;\n\t\t/* position: absolute; */\n\t\t/* bottom: 0; */\n\t\twidth: 100%;\n}\n.main {\n\t\tdisplay: flex;\n\t\t/* height: 500px; */\n\t\tmin-height: 500px;\n\t\t/* align-items: center; */\n}\nfooter p {\n\t\tmargin: 0;\n\t\tpadding: 10px;\n\t\ttext-align: center;\n}\nfooter span {\n\t\tcolor: red;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -18752,7 +18753,7 @@ const _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)
   /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("br"),
   /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("br"),
   /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("br"),
-  /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h3", { style: {"color":"gray"} }, ".. загружаемся информацией ..")
+  /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h3", { style: {"color":"gray"} }, ".. загружаю свежайшую информацию ..")
 ], -1 /* HOISTED */)
 const _hoisted_4 = {
   key: 1,
@@ -18767,7 +18768,7 @@ const _hoisted_6 = {
 const _hoisted_7 = { class: "container" }
 const _hoisted_8 = { class: "row pt-5" }
 const _hoisted_9 = { class: "col-12 xcol-sm-6 xcol-md-4 xcol-lg-3 name text-center" }
-const _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"list_head hidden-xs pt-5\" style=\"border-bottom:1px solid gray;\"><div class=\"row\"><div class=\"\n\t\t\t\t  col-8 col-sm-6 col-md-4 col-lg-3 name\n\t\t\t\t  \"><b>Наименование</b></div><div class=\"\n\t\t\t\t\t  d-none d-lg-block\n\t\t\t\t\t  col-lg-2\n\t\t\t\t\t\"><b>Артикул</b></div><div class=\"\n\t\t\t\t\t  d-none d-lg-block col-lg-1\n\t\t\t\t\t\"><b>Срок годности</b></div><div class=\"\n\t\t\t\t\t  d-none d-sm-none d-md-none d-lg-block\n\t\t\t\t\t  xhidden-xs xhidden-sm\n\t\t\t\t\t  xcol-md-1 col-lg-1\n\t\t\t\t\t  onsklad\n\t\t\t\t\t\"><b>На складе</b></div><div class=\"\n\t\t\t\t\t  d-none d-md-block\n\t\t\t\t\t  col-md-2 col-lg-1\n\t\t\t\t\t  text-center\n\t\t\t\t\t\"><!-- &lt;b&gt;Цена для Пайщиков-Сотрудников&lt;/b&gt; --><b>Цена №3 (руб)</b></div><div class=\"\n\t\t\t\t\t  d-none d-md-block\n\t\t\t\t\t  col-md-2 col-lg-1\n\t\t\t\t\t  text-center\n\t\t\t\t\t\"><!-- &lt;b&gt;Цена для Пайшиков-Потребителей&lt;/b&gt; --><b>Цена №2 (руб)</b></div><div class=\"\n\t\t\t\t\t  d-block\n\t\t\t\t\t  col-4 col-md-2 col-lg-1\n\t\t\t\t  text-center\"><!-- &lt;b&gt;Цена&lt;/b&gt; --><b>Цена (руб) обычная </b></div><div class=\"                \n\t\t\t\t\t  d-none d-sm-block\n\t\t\t\t\t  col-sm-3 col-md-2 col-lg-1\n\t\t\t\t  \"></div></div></div>", 1)
+const _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"list_head hidden-xs pt-5\" style=\"border-bottom:1px solid gray;\"><div class=\"row\"><div class=\"col-8 col-sm-6 col-md-4 xcol-lg-3 col-lg-4 name\"><b>Наименование</b></div><!-- &lt;div\n\t\t\t\t\tclass=&quot;\n\t\t\t\t\t  d-none d-lg-block\n\t\t\t\t\t  col-lg-2\n\t\t\t\t\t&quot;\n\t\t\t\t  &gt;\n\t\t\t\t\t&lt;b&gt;Артикул&lt;/b&gt;\n\t\t\t\t  &lt;/div&gt; --><!-- &lt;div\n\t\t\t\t\tclass=&quot;\n\t\t\t\t\t  d-none d-lg-block col-lg-1\n\t\t\t\t\t&quot;\n\t\t\t\t  &gt;\n\t\t\t\t\t&lt;b&gt;Срок годности&lt;/b&gt;\n\t\t\t\t  &lt;/div&gt; --><!-- &lt;div\n\t\t\t\t\tclass=&quot;\n\t\t\t\t\t  d-none d-sm-none d-md-none d-lg-block\n\t\t\t\t\t  xhidden-xs xhidden-sm\n\t\t\t\t\t  xcol-md-1 col-lg-1\n\t\t\t\t\t  onsklad\n\t\t\t\t\t&quot;\n\t\t\t\t  &gt;\n\t\t\t\t\t&lt;b&gt;На складе&lt;/b&gt;\n\t\t\t\t  &lt;/div&gt; --><div class=\"d-none d-md-block col-md-2 xcol-lg-1 col-lg-2 text-center\"><b>Цена (руб) Сотрудников</b><!-- &lt;b&gt;Цена&amp;nbsp;№3 (руб)&lt;/b&gt; --></div><div class=\"d-none d-md-block col-md-2 xcol-lg-1 col-lg-2 text-center\"><b>Цена (руб) Пайшикам</b><!-- &lt;b&gt;Цена&amp;nbsp;№2 (руб)&lt;/b&gt; --></div><div class=\"d-block col-4 col-md-2 xcol-lg-1 col-lg-2 text-center\"><!-- &lt;b&gt;Цена&lt;/b&gt; --><b>Цена (руб)</b><!-- &lt;b&gt;Цена&amp;nbsp;(руб) обычная &lt;/b&gt; --></div><div class=\"d-none d-sm-block col-sm-3 col-md-2 xcol-lg-1 col-lg-2\"></div></div></div>", 1)
 const _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("br", null, null, -1 /* HOISTED */)
 const _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("br", null, null, -1 /* HOISTED */)
 
@@ -18981,19 +18982,16 @@ __webpack_require__.r(__webpack_exports__);
 
 const _hoisted_1 = { class: "row item pt-1 pb-1" }
 const _hoisted_2 = {
-  class: "\n        xcol-xs-12 xcol-sm-4 xcol-md-3 xcol-lg-3\n        name_item\n        col-8 col-sm-6 col-md-4 col-lg-3\n        name\n      ",
+  class: "xcol-xs-12 xcol-sm-4 xcol-md-3 xcol-lg-3 name_item col-8 col-sm-6 col-md-4 xcol-lg-3 col-lg-4 name",
   xclick: "show1 = !show1"
 }
 const _hoisted_3 = { class: "ed_iz" }
 const _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("br", null, null, -1 /* HOISTED */)
-const _hoisted_5 = { class: "d-none d-lg-block col-lg-2" }
-const _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", { class: "d-none d-lg-block col-lg-1 text-right" }, "  ", -1 /* HOISTED */)
-const _hoisted_7 = { class: "d-none d-lg-block col-lg-1 text-right" }
-const _hoisted_8 = { class: "d-none d-sm-none d-md-block col-md-2 col-lg-1 price" }
-const _hoisted_9 = { class: "d-none d-sm-none d-md-block col-md-2 col-lg-1 price" }
-const _hoisted_10 = { class: "d-block col-4 col-sm-3 col-md-2 col-lg-1 price" }
-const _hoisted_11 = { class: "col-12 text-center col-sm-3 text-sm-start col-md-2 col-lg-2 but_bay nobr" }
-const _hoisted_12 = {
+const _hoisted_5 = { class: "d-none d-sm-none d-md-block col-md-2 xcol-lg-1 col-lg-2 price" }
+const _hoisted_6 = { class: "d-none d-sm-none d-md-block col-md-2 xcol-lg-1 col-lg-2 price" }
+const _hoisted_7 = { class: "d-block col-4 col-sm-3 col-md-2 xcol-lg-1 col-lg-2 price" }
+const _hoisted_8 = { class: "col-12 text-center col-sm-3 text-sm-start col-md-2 col-lg-2 but_bay nobr" }
+const _hoisted_9 = {
   key: 1,
   style: {"display":"inline-block","width":"25px"}
 }
@@ -19001,8 +18999,8 @@ const _hoisted_12 = {
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_1, [
     (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [
-      (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.el.naimenovanie ?? "") + " " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.el.dobavka ?? "") + " ", 1 /* TEXT */),
-      (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.el.edizm ?? ""), 1 /* TEXT */),
+      (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.el.naimenovanie ?? '') + " " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.el.dobavka ?? '') + " ", 1 /* TEXT */),
+      (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.el.edizm ?? ''), 1 /* TEXT */),
       (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <br/> "),
       (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <a href=\"http://vk.com/id85935868\" target=\"_blank\">\n\t\tvk.com/id85935868\n\t\t</a> "),
       ($props.el.saitsdelal.length > 0)
@@ -19017,15 +19015,15 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <pre v-if=\"show1\">{{ el }}</pre> ")
     ]),
     (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" артикул "),
-    (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.el.kodt), 1 /* TEXT */),
+    (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"d-none d-lg-block col-lg-2\">\n      {{ el.kodt }}\n    </div> "),
     (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" срок годности "),
-    _hoisted_6,
+    (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"d-none d-lg-block col-lg-1 text-right\">\n    &nbsp;</div> "),
     (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" на складе "),
-    (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.el.kolicestvo), 1 /* TEXT */),
-    (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.showPrice1), 1 /* TEXT */),
-    (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.showPrice2), 1 /* TEXT */),
-    (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.showPrice3), 1 /* TEXT */),
-    (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_11, [
+    (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"d-none d-lg-block col-lg-1 text-right\">\n      {{ el.kolicestvo }}\n    </div> "),
+    (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.showPrice1), 1 /* TEXT */),
+    (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.showPrice2), 1 /* TEXT */),
+    (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.showPrice3), 1 /* TEXT */),
+    (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_8, [
       ($setup.good[$props.el.id] > 0)
         ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("button", {
             key: 0,
@@ -19038,7 +19036,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
             xvalue: "-",
             type: "button"
           }, " - "))
-        : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_12, " ")),
+        : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_9, " ")),
       (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" el.id {{ el.id }} "),
       (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
         "onUpdate:modelValue": _cache[2] || (_cache[2] = $event => ($setup.good[$props.el.id] = $event)),

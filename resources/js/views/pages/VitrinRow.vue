@@ -1,18 +1,13 @@
 <template>
   <div class="row item pt-1 pb-1">
     <div
-      class="
-        xcol-xs-12 xcol-sm-4 xcol-md-3 xcol-lg-3
-        name_item
-        col-8 col-sm-6 col-md-4 col-lg-3
-        name
-      "
+      class="xcol-xs-12 xcol-sm-4 xcol-md-3 xcol-lg-3 name_item col-8 col-sm-6 col-md-4 xcol-lg-3 col-lg-4 name"
       xclick="show1 = !show1"
     >
-      {{ el.naimenovanie ?? "" }}
-      {{ el.dobavka ?? "" }}
+      {{ el.naimenovanie ?? '' }}
+      {{ el.dobavka ?? '' }}
 
-      <span class="ed_iz">{{ el.edizm ?? "" }}</span>
+      <span class="ed_iz">{{ el.edizm ?? '' }}</span>
 
       <!-- <br/> -->
       <!-- <a href="http://vk.com/id85935868" target="_blank">
@@ -28,30 +23,32 @@
     </div>
 
     <!-- артикул -->
-    <div class="d-none d-lg-block col-lg-2">
+    <!-- <div class="d-none d-lg-block col-lg-2">
       {{ el.kodt }}
-    </div>
+    </div> -->
 
     <!-- срок годности -->
-    <div class="d-none d-lg-block col-lg-1 text-right">
-    &nbsp;</div>
+    <!-- <div class="d-none d-lg-block col-lg-1 text-right">
+    &nbsp;</div> -->
 
     <!-- на складе -->
-    <div class="d-none d-lg-block col-lg-1 text-right">
+    <!-- <div class="d-none d-lg-block col-lg-1 text-right">
       {{ el.kolicestvo }}
-    </div>
+    </div> -->
 
-    <div class="d-none d-sm-none d-md-block col-md-2 col-lg-1 price">
+    <div class="d-none d-sm-none d-md-block col-md-2 xcol-lg-1 col-lg-2 price">
       {{ showPrice1 }}
     </div>
-    <div class="d-none d-sm-none d-md-block col-md-2 col-lg-1 price">
+    <div class="d-none d-sm-none d-md-block col-md-2 xcol-lg-1 col-lg-2 price">
       {{ showPrice2 }}
     </div>
-    <div class="d-block col-4 col-sm-3 col-md-2 col-lg-1 price">
+    <div class="d-block col-4 col-sm-3 col-md-2 xcol-lg-1 col-lg-2 price">
       {{ showPrice3 }}
     </div>
 
-    <div class="col-12 text-center col-sm-3 text-sm-start col-md-2 col-lg-2 but_bay nobr">
+    <div
+      class="col-12 text-center col-sm-3 text-sm-start col-md-2 col-lg-2 but_bay nobr"
+    >
       <button
         v-if="good[el.id] > 0"
         @click="good[el.id] = good[el.id] > 1 ? good[el.id] - 1 : 0"
@@ -65,7 +62,7 @@
       >
         -
       </button>
-      <div v-else style="display: inline-block; width: 25px">&nbsp;</div>
+      <div v-else style="display: inline-block; width: 25px;">&nbsp;</div>
       <!-- el.id {{ el.id }} -->
       <input v-model="good[el.id]" class="kolvo" type="text" />
       <button
@@ -86,9 +83,9 @@
 
 <script>
 // import { ref } from 'vue';
-import { computed } from "vue";
+import { computed } from 'vue'
 // import axios from "axios";
-import Vitrin from "./../../use/Vitrin.ts";
+import Vitrin from './../../use/Vitrin.ts'
 
 export default {
   props: {
@@ -99,13 +96,13 @@ export default {
   data() {
     return {
       show1: false,
-    };
+    }
   },
 
   setup(props) {
-    const { good } = Vitrin();
+    const { good } = Vitrin()
 
-    good.value[props.el.id] = 0;
+    good.value[props.el.id] = 0
 
     // const pageData = ref('');
 
@@ -129,26 +126,26 @@ export default {
     // const ru = new Intl.NumberFormat("ru").format(amount);
 
     const showPrice1 = computed(() =>
-      new Intl.NumberFormat("ru").format(Math.ceil(props.el.cena1))
-    );
+      new Intl.NumberFormat('ru').format(Math.ceil(props.el.cena1)),
+    )
     const showPrice2 = computed(() =>
-      new Intl.NumberFormat("ru").format(Math.ceil(props.el.cena2))
-    );
+      new Intl.NumberFormat('ru').format(Math.ceil(props.el.cena2)),
+    )
     const showPrice3 = computed(() =>
-      new Intl.NumberFormat("ru").format(Math.ceil(props.el.cena3))
-    );
+      new Intl.NumberFormat('ru').format(Math.ceil(props.el.cena3)),
+    )
 
     return {
       good,
       showPrice1,
       showPrice2,
       showPrice3,
-    };
+    }
   },
-};
+}
 </script>
 
-<style lang="scss" >
+<style lang="scss">
 pre {
   max-height: 300px;
   overflow: auto;

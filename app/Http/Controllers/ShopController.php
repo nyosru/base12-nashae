@@ -218,7 +218,8 @@ class ShopController extends Controller
      */
     public function show($id = null)
     {
-        return new GoodCollection(Osts::paginate(10));
+        return new GoodCollection(Osts::all());
+        // return new GoodCollection(Osts::paginate(10));
     }
 
     /**

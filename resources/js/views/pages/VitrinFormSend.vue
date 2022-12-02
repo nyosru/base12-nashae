@@ -109,7 +109,7 @@
 
 <script>
 import { ref, computed } from "vue";
-// import axios from "axios";
+import axios from "axios";
 
 // import VitrinRow from "./VitrinRow.vue";
 import Vitrin from "./../../use/Vitrin.ts";

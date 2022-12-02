@@ -60,15 +60,16 @@
 
 	footer {
 		background: #d8d8d8;
-		position: absolute;
-		bottom: 0;
+		/* position: absolute; */
+		/* bottom: 0; */
 		width: 100%;
 	}
 
 	.main {
 		display: flex;
-		height: 500px;
-		align-items: center;
+		/* height: 500px; */
+		min-height: 500px;
+		/* align-items: center; */
 	}
 
 	footer p {

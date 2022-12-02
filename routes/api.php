@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BackwordController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,5 +21,6 @@ use App\Http\Controllers\ShopController;
 //     return $request->user();
 // });
 
+Route::post('sendOrder', [ BackwordController::class, 'sendOrder']);
 Route::get('goods', [ShopController::class, 'show']);
 Route::get('parser', [ShopController::class, 'parsingDataFiles']);
