@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\GoodCollection;
+use App\Models\Osts;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -25,7 +27,7 @@ class ShopController extends Controller
         // return view('narod::index', $in);
         return view('index', $in);
     }
-    
+
     /**
      * Show the form for creating a new resource.
      *
@@ -214,9 +216,9 @@ class ShopController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id = null)
     {
-        //
+        return new GoodCollection(Osts::paginate(10));
     }
 
     /**

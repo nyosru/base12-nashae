@@ -1,6 +1,6 @@
 //-------------- IMPORT ALL LIBRARY MODULES ------------------//
 import { createApp } from 'vue';
-import {createRouter, createWebHistory} from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 //--------------- END ALL LIBRARY MODULES ------------------//
 
 // Routes
@@ -24,5 +24,6 @@ app.use(router)
 
 // Mount the App
 app.mount('#app')
+    // app.mount()
 
 // Done.....!

@@ -20,4 +20,5 @@ use App\Http\Controllers\ShopController;
 //     return $request->user();
 // });
 
+Route::get('goods', [ShopController::class, 'show']);
 Route::get('parser', [ShopController::class, 'parsingDataFiles']);
