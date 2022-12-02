@@ -34,7 +34,8 @@ const getData = async () => {
 
     // loading.value = false;
     await axios
-      .get( "/api47/getVitrin" )
+      // .get( "/api47/getVitrin" )
+      .get( "/api/goods" )
       .then((response) => {
 
         // console.log('getData - response.data',response.data);

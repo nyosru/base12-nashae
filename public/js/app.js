@@ -14907,7 +14907,7 @@ var getData = /*#__PURE__*/function () {
               break;
             }
             _context.next = 6;
-            return axios__WEBPACK_IMPORTED_MODULE_1__["default"].get("/api47/getVitrin").then(function (response) {
+            return axios__WEBPACK_IMPORTED_MODULE_1__["default"].get("/api/goods").then(function (response) {
               // console.log('getData - response.data',response.data);
               pageData.value = response.data.data;
               // idata.value = response.data.idata.BOOM ?? {};
