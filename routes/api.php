@@ -22,7 +22,8 @@ use App\Http\Controllers\ShopController;
 // });
 
 Route::group(['middleware' => 'cors'], function () {
-    Route::post('sendOrder', [BackwordController::class, 'sendOrder']);
+    // Route::post('sendOrder', [BackwordController::class, 'sendOrder']);
+    Route::get('sendOrder', [BackwordController::class, 'sendOrder']);
     Route::get('goods', [ShopController::class, 'show']);
     Route::get('parser', [ShopController::class, 'parsingDataFiles']);
 });
