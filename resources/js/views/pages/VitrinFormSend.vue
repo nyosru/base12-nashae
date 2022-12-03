@@ -214,11 +214,11 @@ export default {
 
       axios
         // .post("/api/sendOrder", {
-        .get("/api/sendOrder?${params}", {
-          goods: good.value,
-          fio: fio.value,
-          phone: phone.value
-        })
+        //   goods: good.value,
+        //   fio: fio.value,
+        //   phone: phone.value
+        // })
+        .get("/api/sendOrder?${params}" )
         .then((response) => {
           // pageData.value = response.data.data;
           console.log("response.data", response.data);
