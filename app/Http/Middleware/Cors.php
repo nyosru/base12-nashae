@@ -29,9 +29,21 @@ class Cors
      */
     public function handle(Request $request, Closure $next)
     {
-        // return $next($request);
+        $origin = $request->headers->get('Origin');
+
+        //если есть, то устанавливаем нужные заголовки
+        // return $next($request)
         return $next($request)
-            ->header('Access-Control-Allow-Origin', '*')
-            ->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+            ->header('Access-Control-Allow-Origin', $origin)
+            ->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE')
+            ->header('Access-Control-Allow-Credentials', 'true')
+            ->header(
+                'Access-Control-Allow-Headers',
+                'Authorization, Origin, X-Requested-With, Accept, X-PINGOTHER, Content-Type'
+            );
+        // // return $next($request);
+        // return $next($request)
+        //     ->header('Access-Control-Allow-Origin', '*')
+        //     ->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
     }
 }
