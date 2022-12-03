@@ -207,8 +207,8 @@ export default {
       // sendToTelegramm(123123123);
 
       axios
-        .post("/api/sendOrder", {
-        // .get("/api/sendOrder", {
+        // .post("/api/sendOrder", {
+        .get("/api/sendOrder", {
           goods: good.value,
           fio: fio.value,
           phone: phone.value
