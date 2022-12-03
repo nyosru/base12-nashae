@@ -201,24 +201,23 @@ export default {
     // }
 
     const sendOrder = () => {
-      console.log(777)
-      console.log(good.value)
+      console.log(777, good.value)
       // sendToTelegramm(123123123);
 
-      let payload = [
-        'goods' > good.value,
-        'fio' > fio.value,
-        'phone' > phone.value,
-      ]
-      const params = new url.URLSearchParams(payload)
+      // let payload = [
+      //   'goods' > good.value,
+      //   'fio' > fio.value,
+      //   'phone' > phone.value,
+      // ]
+      // const params = new url.URLSearchParams(payload)
 
       axios
-        // .post('/api/sendOrder', {
-        //   goods: good.value,
-        //   fio: fio.value,
-        //   phone: phone.value,
-        // })
-        .get('/api/sendOrder?${params}')
+        .post('/api/sendOrder', {
+          goods: good.value,
+          fio: fio.value,
+          phone: phone.value,
+        })
+        // .get('/api/sendOrder?${params}')
         .then((response) => {
           // pageData.value = response.data.data;
           console.log('response.data', response.data)
@@ -226,6 +225,7 @@ export default {
         })
         .catch((error) => {
           console.log(error)
+          sendForm.value = true
           // loadError.value = true;
         })
     }
