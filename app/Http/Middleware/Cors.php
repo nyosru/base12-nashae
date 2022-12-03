@@ -7,6 +7,19 @@ use Illuminate\Http\Request;
 
 class Cors
 {
+
+    /**
+     * Массив доменов, с которых будем принимать запросы.
+     *
+     * @var array
+     */
+    protected $domains = [
+        'http://narek.dev.php-cat.com',
+        'https://narek.dev.php-cat.com',
+        'http://localhost',
+        'https://localhost',
+    ];
+
     /**
      * Handle an incoming request.
      *
