@@ -206,9 +206,15 @@ export default {
       console.log(good.value);
       // sendToTelegramm(123123123);
 
+
+      let payload = {     goods: good.value,
+          fio: fio.value,
+          phone: phone.value };
+      const params = new url.URLSearchParams(payload);
+
       axios
         // .post("/api/sendOrder", {
-        .get("/api/sendOrder", {
+        .get("/api/sendOrder?${params}", {
           goods: good.value,
           fio: fio.value,
           phone: phone.value
