@@ -88,8 +88,8 @@
                   /> -->
                 </div>
                 <div class="col-xs-6 col-md-4 col-sm-4 col-lg-2 text-center">
-                  <span id="ok_but_stat"></span
-                  ><input
+                  <span id="ok_but_stat"></span>
+                  <input
                     id="ok_but"
                     class="btn btn-success"
                     xname="suba"
@@ -108,11 +108,11 @@
 </template>
 
 <script>
-import { ref, computed } from "vue";
-import axios from "axios";
+import { ref, computed } from 'vue'
+import axios from 'axios'
 
 // import VitrinRow from "./VitrinRow.vue";
-import Vitrin from "./../../use/Vitrin.ts";
+import Vitrin from './../../use/Vitrin.ts'
 
 export default {
   // props: {
@@ -129,41 +129,40 @@ export default {
     // VitrinRow,
   },
   setup(props) {
+    const fio = ref('')
+    const phone = ref('')
 
-    const fio = ref('');
-    const phone = ref('');
-
-    const { good, pageData: goods } = Vitrin();
+    const { good, pageData: goods } = Vitrin()
 
     // console.log("pageData", goods.value);
     // console.log("pageData", good.value);
 
-    let x = 0;
+    let x = 0
 
     const showForm = computed(
-      () => good.value.map((i) => (x += i), (x = 0)).reverse()[0]
-    );
+      () => good.value.map((i) => (x += i), (x = 0)).reverse()[0],
+    )
 
     // фильтруем умножаем и суммируем
-    const resFind2 = ref({});
+    const resFind2 = ref({})
     const showFormSumm = computed(() =>
       good.value
         .map((kolvo, id) => {
           if (kolvo > 0) {
-            resFind2.value = goods.value.find((el) => el.id == id);
+            resFind2.value = goods.value.find((el) => el.id == id)
             // console.log("resFind2.value", resFind2.value.cena1, resFind2.value);
-            return 0 + Math.ceil(resFind2.value.cena3) * kolvo;
+            return 0 + Math.ceil(resFind2.value.cena3) * kolvo
           } else {
-            return 0;
+            return 0
           }
         })
         .reduce(function (previous, current) {
-          return previous + current;
-        }, 0)
-    );
+          return previous + current
+        }, 0),
+    )
 
-    const sendForm = ref(false);
-    const sendFormError = ref(false);
+    const sendForm = ref(false)
+    const sendFormError = ref(false)
 
     // const sendToTelegramm = async (msg) => {
 
@@ -202,33 +201,34 @@ export default {
     // }
 
     const sendOrder = () => {
-      console.log(777);
-      console.log(good.value);
+      console.log(777)
+      console.log(good.value)
       // sendToTelegramm(123123123);
 
-
-      // let payload = {     goods: good.value,
-      //     fio: fio.value,
-      //     phone: phone.value };
-      // const params = new url.URLSearchParams(payload);
+      let payload = [
+        'goods' > good.value,
+        'fio' > fio.value,
+        'phone' > phone.value,
+      ]
+      const params = new url.URLSearchParams(payload)
 
       axios
-        .post("/api/sendOrder", {
-          goods: good.value,
-          fio: fio.value,
-          phone: phone.value
-        })
-        // .get("/api/sendOrder?${params}" )
+        // .post('/api/sendOrder', {
+        //   goods: good.value,
+        //   fio: fio.value,
+        //   phone: phone.value,
+        // })
+        .get('/api/sendOrder?${params}')
         .then((response) => {
           // pageData.value = response.data.data;
-          console.log("response.data", response.data);
-          sendForm.value = true;
+          console.log('response.data', response.data)
+          sendForm.value = true
         })
         .catch((error) => {
-          console.log(error);
+          console.log(error)
           // loadError.value = true;
-        });
-    };
+        })
+    }
 
     // const pageData = ref("");
 
@@ -255,12 +255,12 @@ export default {
       resFind2,
       sendForm,
       sendFormError,
-    };
+    }
   },
-};
+}
 </script>
 
-<style lang="scss" >
+<style lang="scss">
 .mh150 {
   max-height: 100px;
   overflow: auto;
