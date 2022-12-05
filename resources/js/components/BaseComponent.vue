@@ -22,7 +22,7 @@
 </template>
 
 <script setup>
-import vi from './vitrin/ViComponent.vue'
+import vi from './vitrin/VitrinComponent.vue'
 
 // export default {
 //   components: {

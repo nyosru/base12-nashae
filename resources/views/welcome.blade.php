@@ -3,7 +3,8 @@
 @section('content')
     {{-- 121212
     <Br/> --}}
-    <base-component />
+    <app />
+    {{-- <base-component /> --}}
     {{-- <example-component></example-component> --}}
     {{-- 11++ --}}
     {{-- <ex1-component></ex1-component> --}}

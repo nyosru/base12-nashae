@@ -4,15 +4,28 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
+require('./bootstrap')
 
-import { createApp } from 'vue';
+import { createApp } from 'vue'
 
 // window.Vue = require('vue').default;
+
+import { createRouter, createWebHistory } from 'vue-router'
+//--------------- END ALL LIBRARY MODULES ------------------//
+
+// Routes
+import routes from './routes'
+// Router instance
+const router = createRouter({
+    history: createWebHistory(),
+    routes,
+})
 
 let app = createApp({})
     // app.component('example-component', require('./components/ExampleComponent.vue').default);
     // app.component('example-component', require('./components/ExampleComponent.vue').default);
+
+app.use(router)
 
 // /**
 //  * The following block of code may be used to automatically register your
@@ -24,9 +37,14 @@ let app = createApp({})
 
 const files = require.context('./components/', true, /\.vue$/i)
     // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
-files.keys().map(key => app.component(key.split('/').pop().split('.')[0], files(key).default))
+files
+    .keys()
+    .map((key) =>
+        app.component(key.split('/').pop().split('.')[0], files(key).default),
+    )
 
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+app.component('app', require('./components/layouts/App.vue').default);
 
 // /**
 //  * Next, we will create a fresh Vue application instance and attach it to
@@ -38,5 +56,5 @@ files.keys().map(key => app.component(key.split('/').pop().split('.')[0], files(
 //     el: '#app',
 // });
 
-app.mount("#app")
+app.mount('#app')
     // app.mount()

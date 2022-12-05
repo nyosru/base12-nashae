@@ -22,15 +22,6 @@
 </template>
 
 <script setup>
-import vi from './vitrin/ViComponent.vue'
-
-// export default {
-//   components: {
-//     vi,
-//   },
-//   mounted() {
+import vi from './vitrin/VitrinComponent.vue'
 console.log('Component mounted.')
-//   }
-//   ,
-// }
 </script>
