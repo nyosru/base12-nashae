@@ -58,6 +58,10 @@ class BackwordController extends Controller
      */
     public function sendOrder(Request $request)
     {
+
+        Access-Control-Allow-Origin: *
+
+
         $in = [];
         foreach ($request->goods as $k => $v) {
             if (!empty($v)) {
