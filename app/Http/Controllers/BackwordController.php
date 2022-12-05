@@ -9,12 +9,10 @@ use Nyos\Msg;
 class BackwordController extends Controller
 {
 
-
     public static function toNormNum($str)
     {
         return round(str_replace(',', '.', preg_replace("/[^,.0-9]/", '', $str)), 2);
     }
-
 
     /**
      * @return Renderable
