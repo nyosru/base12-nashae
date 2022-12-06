@@ -28,7 +28,7 @@
 	}
 	/* CUSTOM STYLES */
 	header {
-		background: rgb(0, 0, 0);
+		background: rgba(0, 0, 0, 0.1);
 	}
 	nav {
 		display: flex;
@@ -40,7 +40,7 @@
 	}
 	nav h1.brand a {
 		font-size: 24pt;
-		color: rgb(255, 255, 255);
+		xcolor: rgb(255, 255, 255);
 	}
 	nav ul {
 		display: flex;
@@ -48,13 +48,13 @@
 	}
 	nav ul li a {
 		background: #292929;
-		color: white;
+		xcolor: white;
 		padding: 10px 20px;
 		margin: 0px 10px;
 	}
 	nav ul li a:hover,
 	nav ul li a.router-link-exact-active {
-		color: white;
+		xcolor: white;
 		border-bottom: 2px solid;
 	}
 
