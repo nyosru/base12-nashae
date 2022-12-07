@@ -2,6 +2,7 @@
 import Home from "./components/pages/Home";
 
 import Vitrin from "./components/pages/Vitrin.vue";
+import Trebs from "./components/pages/Trebs.vue";
 
 import About from "./components/pages/About";
 import Contact from "./components/pages/Contact";
@@ -21,7 +22,7 @@ export default [
     // { path: "/dobro", component: Page, name: 'Dobro' },
     { path: "/about", component: Page, name: 'About' },
     { path: "/documents", component: Page, name: 'Documents' },
-    { path: "/trebs", component: Page, name: 'Trebs' },
+    { path: "/trebs", component: Trebs, name: 'Trebs' },
     { path: "/balance", component: Page, name: 'Balance' },
     { path: "/contacts", component: Page, name: 'Contact' },
 

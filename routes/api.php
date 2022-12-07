@@ -6,7 +6,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BackwordController;
 use App\Http\Controllers\ShopController;
 use App\Http\Resources\PageResource;
+use App\Http\Resources\PotrebsResource;
 use App\Models\Page;
+use App\Models\Pots;
 
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return $request->user();
@@ -16,6 +18,9 @@ Route::group(['middleware' => 'cors'], function () {
     Route::post('sendOrder', [BackwordController::class, 'sendOrder']);
     Route::get('sendOrder', [BackwordController::class, 'sendOrder']);
     Route::get('goods', [ShopController::class, 'show']);
+
+    // требы
+    Route::get('trebs', fn () => new PotrebsResource(Pots::all()));
 
     Route::get('page/{pageNow}', fn ($pageNow) => new PageResource(Page::findOrFail($pageNow)));
 

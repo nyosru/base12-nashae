@@ -58,13 +58,6 @@ nav ul li a.router-link-exact-active {
   border-bottom: 2px solid;
 }
 
-footer {
-  background: #d8d8d8;
-  /* position: absolute; */
-  /* bottom: 0; */
-  width: 100%;
-}
-
 .main {
   display: flex;
   /* height: 500px; */
@@ -72,12 +65,5 @@ footer {
   /* align-items: center; */
 }
 
-footer p {
-  margin: 0;
-  padding: 10px;
-  text-align: center;
-}
-footer span {
-  color: red;
-}
+
 </style>
