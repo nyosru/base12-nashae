@@ -1,6 +1,55 @@
 <template>
   <header>
-    <nav>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 text-center">
+                <a href="/">
+                  <img
+                    src="/img/logo.png"
+                    style="
+                      padding-top: 1em;
+                      max-height: 120px;
+                      xmargin-left: 10%;
+                    "
+                    alt="Народная экономика"
+                  />
+                </a>
+              </div>
+              <div
+                class="col-xs-12 col-sm-9 col-md-9 col-lg-9 xalign-middle text-center d-flex align-items-center"
+              >
+                <div
+                  class="align-self-center text-center"
+                  style="width: 100%; xborder: 1px solid green;"
+                >
+                  <!-- <header-menu></header-menu> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="d-flex align-items-center">
+      <div class="flex-shrink-0">
+        <img
+          src="/img/logo.png"
+          style="xpadding-top: 1em; max-height: 120px; xmargin-left: 10%;"
+          xsrc="..."
+          alt="..."
+        />
+      </div>
+      <div class="flex-grow-1 ms-3">
+        Это какой-то контент из медиа-компонента. Вы можете заменить его любым
+        содержимым и при необходимости отрегулировать его.
+      </div>
+    </div> -->
+
+    <nav v-if="1 == 2">
       <h1 class="brand">
         <router-link to="/">Laravel Vue</router-link>
       </h1>
@@ -13,23 +62,34 @@
       </ul>
     </nav>
   </header>
-  <div>
+  <div v-if="1 == 2">
     <!-- 333 -->
     <head-menu></head-menu>
     <!-- 444 -->
   </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 pt-2 text-center">
+        <header-menu></header-menu>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script setup>
-import headMenu from './../vitrin/page/HeaderMenu.vue'
+// import headMenu from './../vitrin/page/HeaderMenu.vue'
+import headerMenu from './HeaderMenu.vue'
 </script>
 
 <style>
-nav a {
+/* header{
+  background-image: url('/img/bg_up.png');
+} */
+/* nav a {
   color: rgb(200, 200, 200);
-}
-a.router-link-active,
+} */
+/* a.router-link-active,
 li.router-link-active > a {
   color: red;
-}
+} */
 </style>

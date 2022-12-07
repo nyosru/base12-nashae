@@ -40,7 +40,8 @@ export default {
 }
 
 header {
-  background-image: url("/narod/img/bg_up.png");
+  // background-image: url("/narod/img/bg_up.png");
+  background-image: url("/img/bg_up.png");
   min-height: 150px;
   background-size: cover;
   box-shadow: inset 0 0 10px gray;
@@ -255,21 +256,4 @@ x.table2:nth-child(even){ background-color: #e5e5e5; }
   z-index: 200;
 }
 
-xx.table {
-  overflow: visible;
-}
-.list_head,
-.table thead {
-  position: -webkit-sticky;
-  position: -moz-sticky;
-  position: -ms-sticky;
-  position: -o-sticky;
-  position: sticky;
-  top: 40px;
-  background-color: rgba(255, 255, 255, 0.8);
-  z-index: 200;
-}
-.table thead th {
-  background-color: rgba(255, 255, 255, 0.8);
-}
 </style>

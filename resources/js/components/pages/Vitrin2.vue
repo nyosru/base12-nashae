@@ -240,7 +240,8 @@ pre {
   position: -ms-sticky;
   position: -o-sticky;
   position: sticky;
-  top: 40px;
+  // top: 140px;
+  top: 0px;
   background-color: rgba(255, 255, 255, 0.8);
   z-index: 200;
 }

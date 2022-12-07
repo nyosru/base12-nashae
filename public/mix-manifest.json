@@ -1,4 +1,10 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/css/app.css": "/css/app.css",
+    "/img/apple-touch-icon.png": "/img/apple-touch-icon.png",
+    "/img/bg_up.png": "/img/bg_up.png",
+    "/img/favicon-16x16.png": "/img/favicon-16x16.png",
+    "/img/favicon-32x32.png": "/img/favicon-32x32.png",
+    "/img/logo.png": "/img/logo.png",
+    "/img/site.webmanifest": "/img/site.webmanifest"
 }

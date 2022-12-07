@@ -219,17 +219,39 @@ pre {
   overflow: auto;
 }
 
-.list_head,
-.table thead {
+// .list_head,
+// .table thead {
 //   position: -webkit-sticky;
 //   position: -moz-sticky;
 //   position: -ms-sticky;
 //   position: -o-sticky;
 //   position: sticky;
-//   top: 40px;
-//   background-color: rgba(255, 255, 255, 0.8);
-//   z-index: 200;
+//   //   top: 40px;
+//   top: 0px;
+//   //   background-color: rgba(255, 255, 255, 0.8);
+//   //   z-index: 200;
+// }
+
+
+xx.table {
+  overflow: visible;
 }
+.list_head,
+.table thead {
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  position: sticky;
+  // top: 40px;
+  top: 0px;
+  background-color: rgba(5, 255, 255, 0.8);
+  z-index: 200;
+}
+.table thead th {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
 
 .item {
   margin-top: 3px;

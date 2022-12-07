@@ -1,6 +1,6 @@
 <template>
   <div class="container text-center p-20">
-    <!-- <h1>{{ $route.name }} Page Component</h1> -->
+    <h1>{{ $route.name }} Page Component</h1>
     <div v-if="loadError">
       ... упс, что то поло не так ...
     </div>
