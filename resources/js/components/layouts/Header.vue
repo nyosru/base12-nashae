@@ -34,21 +34,6 @@
       </div>
     </div>
 
-    <!-- <div class="d-flex align-items-center">
-      <div class="flex-shrink-0">
-        <img
-          src="/img/logo.png"
-          style="xpadding-top: 1em; max-height: 120px; xmargin-left: 10%;"
-          xsrc="..."
-          alt="..."
-        />
-      </div>
-      <div class="flex-grow-1 ms-3">
-        Это какой-то контент из медиа-компонента. Вы можете заменить его любым
-        содержимым и при необходимости отрегулировать его.
-      </div>
-    </div> -->
-
     <nav v-if="1 == 2">
       <h1 class="brand">
         <router-link to="/">Laravel Vue</router-link>
@@ -62,11 +47,7 @@
       </ul>
     </nav>
   </header>
-  <div v-if="1 == 2">
-    <!-- 333 -->
-    <head-menu></head-menu>
-    <!-- 444 -->
-  </div>
+
   <div class="container">
     <div class="row">
       <div class="col-xs-12 pt-2 text-center">
@@ -77,19 +58,7 @@
 </template>
 
 <script setup>
-// import headMenu from './../vitrin/page/HeaderMenu.vue'
 import headerMenu from './HeaderMenu.vue'
 </script>
 
-<style>
-/* header{
-  background-image: url('/img/bg_up.png');
-} */
-/* nav a {
-  color: rgb(200, 200, 200);
-} */
-/* a.router-link-active,
-li.router-link-active > a {
-  color: red;
-} */
-</style>
+<style></style>

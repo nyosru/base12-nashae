@@ -4,8 +4,14 @@
     <span v-for="m in menu" :key="m">
       <router-link
         xv-if="m.onAuth != true || (m.onAuth == true && userId > 0)"
-        :to="{ path: m.level, meta: { type: m.type ?? '' } , params: { username: 'erina' } }"
-        :class="{ active: $route.name == m.level }"
+        :to="{
+          path: m.level,
+          // meta: { type: m.type ?? '' },
+          // params: { username: 'erina' },
+        }"
+        xclass="{ active: $route.name == m.level }" 
+        active-class="active"
+        class="nobr"
       >
         {{ m.name }}
       </router-link>
@@ -94,4 +100,6 @@ export default {
     background-color: rgba(0, 0, 0, 0.2);
   }
 }
+
+.nobr{ white-space: pre; }
 </style>

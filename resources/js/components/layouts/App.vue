@@ -1,20 +1,17 @@
 <template>
-  <Header></Header>
+  <header2></header2>
   <div class="main">
     <router-view></router-view>
   </div>
-  <Footer></Footer>
+  <footer2></footer2>
 </template>
 
-<script>
-import Header from './Header'
-import Footer from './Footer'
-export default {
-  components: { Header, Footer },
-}
+<script setup>
+import header2 from './Header'
+import footer2 from './Footer'
 </script>
 
-<style lang="css">
+<style lang="css" scope>
 /* GLOBAL STYLES */
 body {
   font-family: system-ui;
@@ -64,6 +61,4 @@ nav ul li a.router-link-exact-active {
   min-height: 500px;
   /* align-items: center; */
 }
-
-
 </style>

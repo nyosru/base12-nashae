@@ -8,6 +8,7 @@ import About from "./components/pages/About";
 import Contact from "./components/pages/Contact";
 import Help from "./components/pages/Help";
 import Page from "./components/PageComponent.vue";
+import FormReg from "./components/pages/RegFormComponent.vue";
 
 export default [
 
@@ -20,11 +21,12 @@ export default [
 
     // { path: "/", component: Page, name: 'Dobro' },
     // { path: "/dobro", component: Page, name: 'Dobro' },
-    { path: "/about", component: Page, name: 'About' },
-    { path: "/documents", component: Page, name: 'Documents' },
+    { path: "/about", component: Page, name: 'About', meta: { type: 'page', name: 'О нас' } },
+    { path: "/documents", component: Page, name: 'Documents', meta: { type: 'page', name: 'Документы' } },
     { path: "/trebs", component: Trebs, name: 'Trebs' },
-    { path: "/balance", component: Page, name: 'Balance' },
-    { path: "/contacts", component: Page, name: 'Contact' },
+    { path: "/balance", component: Page, name: 'Balance', meta: { type: 'page', name: 'Наша экономика' } },
+    { path: "/contacts", component: Page, name: 'Contact', meta: { type: 'page', name: 'Контакты' } },
+    { path: "/reg", component: FormReg, name: 'FormReg' },
 
     { path: "/", component: Vitrin, name: 'Vitrin' },
     { path: '/:any', redirect: { name: 'Vitrin' } }

@@ -1,23 +1,25 @@
 <template>
   <!-- <nav class="navbar2"> -->
   <span class="nav-up" v-for="m in menu" :key="m">
+    <!-- m {{ m }}    <br/>    <br/> -->
     <router-link
-      v-if="m.onAuth != true || (m.onAuth == true && userId > 0)"
-      :to="{ path: m.level, meta: { type: m.type ?? '' } }"
+      xxv-if="m.onAuth != true || (m.onAuth == true && userId > 0)"
+      :to="{ path: m.level, meta: { type: m.type ?? 'other' } }"
       :class="{ active: $route.name == m.level }"
+      class="nobr"
     >
-      <nobr>{{ m.name }}</nobr>
+      {{ m.name }}
     </router-link>
   </span>
   <!-- </nav> -->
 </template>
 
-<script>
+<script setup>
 // import axios from "axios";
 import User from './../../use/User.ts'
 
-export default {
-  setup(props) {
+// export default {
+//   setup(props) {
     const { userId } = User()
 
     const menu = [
@@ -35,7 +37,7 @@ export default {
       },
       {
         name: 'Хочу стать участником',
-        level: 'formReg',
+        level: 'reg',
         // type: "RegUser",
         type: 'formReg',
       },
@@ -67,12 +69,12 @@ export default {
       },
     ]
 
-    return {
-      menu,
-      userId,
-    }
-  },
-}
+//     return {
+//       menu,
+//       userId,
+//     }
+//   },
+// }
 </script>
 
 <style lang="scss">
@@ -124,4 +126,7 @@ export default {
 //     background-color: rgba(0, 0, 0, 0.2);
 //   }
 // }
+
+.nobr { white-space: pre; }
+
 </style>

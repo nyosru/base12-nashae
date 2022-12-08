@@ -7,12 +7,14 @@
 		<template v-if="k > 0">v{{ v }} k{{ k }} /</template>
 	  </span> -->
 
+    <transition name="fade">
     <div class="row" v-if="loading">
-      <div class="col-12 text-center">
+      <div class="col-12 text-center p-t-5">
         <br />
         <br />
         <br />
         <h3 style="color: gray;">.. загружаю свежайшую информацию ..</h3>
+        <loadi></loadi>
       </div>
     </div>
 
@@ -123,10 +125,11 @@
 		  </div> -->
       </div>
     </div>
+  </transition>
   </div>
 </template>
 
-<script>
+<script setup>
 import { ref, watchEffect } from 'vue'
 // import axios from "axios";
 
@@ -134,19 +137,21 @@ import VitrinRow from './VitrinRow.vue'
 import VitrinForm from './VitrinFormSend.vue'
 import Vitrin from './../../use/Vitrin.ts'
 
-export default {
-  // data() {
-  //   return {
-  //     searchString: ''
-  //   }
-  // },
+import Loadi from './../LoadingComponent'
 
-  components: {
-    VitrinRow,
-    VitrinForm,
-  },
+// export default {
+//   // data() {
+//   //   return {
+//   //     searchString: ''
+//   //   }
+//   // },
 
-  setup(props) {
+//   components: {
+//     VitrinRow,
+//     VitrinForm,
+//   },
+
+  // setup(props) {
     // const good = ref([]);
     // const pageData = ref([]);
     const searchString = ref('')
@@ -202,21 +207,29 @@ export default {
       }
     })
 
-    return {
-      listData,
-      loading,
-      pageData,
-      good,
-      searchString,
-    }
-  },
-}
+  //   return {
+  //     listData,
+  //     loading,
+  //     pageData,
+  //     good,
+  //     searchString,
+  //   }
+  // },
+// }
 </script>
 
 <style lang="scss">
 pre {
   max-height: 300px;
   overflow: auto;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 5.5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+  opacity: 0;
+  height: 1px;
 }
 
 // .list_head,
