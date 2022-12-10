@@ -14,15 +14,14 @@ use App\Models\Pots;
 //     return $request->user();
 // });
 
-Route::group(['middleware' => 'cors'], function () {
+// Route::group(['middleware' => 'cors'], function () {
     Route::post('sendOrder', [BackwordController::class, 'sendOrder']);
+    Route::post('sendMsg', [BackwordController::class, 'sendMsg']);
     Route::get('sendOrder', [BackwordController::class, 'sendOrder']);
     Route::get('goods', [ShopController::class, 'show']);
 
     // требы
     Route::get('trebs', fn () => new PotrebsResource(Pots::all()));
-
     Route::get('page/{pageNow}', fn ($pageNow) => new PageResource(Page::findOrFail($pageNow)));
-
     Route::get('parser', [ShopController::class, 'parsingDataFiles']);
-});
+// });

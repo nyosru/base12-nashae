@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\CalculateCarStController;
 use Illuminate\Support\Facades\Route;
 
+Route::any('/ss', [ CalculateCarStController::class , 'index' ] );
 Route::any('/{any}', fn() => view('welcome'))->where('any', '.*');
 
 // /*

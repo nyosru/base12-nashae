@@ -49,7 +49,7 @@ class BackwordController extends Controller
 
         $text .= 'Итого: ' . $summa;
 
-        return $text;
+        return (string) $text;
     }
 
     /**
@@ -59,8 +59,7 @@ class BackwordController extends Controller
     public function sendOrder(Request $request)
     {
 
-        Access-Control-Allow-Origin: *
-
+        // Access-Control-Allow-Origin: *
 
         $in = [];
         foreach ($request->goods as $k => $v) {

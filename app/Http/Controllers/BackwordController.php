@@ -9,6 +9,14 @@ use Nyos\Msg;
 class BackwordController extends Controller
 {
 
+    public static $replace = [
+        'fio' => 'Как зовут',
+        'phone' => 'Телефон',
+        'socweb' => 'Соц.сеть',
+        'predlogau' => 'Немного о себе'
+    ];
+
+
     public static function toNormNum($str)
     {
         return round(str_replace(',', '.', preg_replace("/[^,.0-9]/", '', $str)), 2);
@@ -47,7 +55,34 @@ class BackwordController extends Controller
 
         $text .= 'Итого: ' . $summa;
 
-        return $text;
+        return (string) $text;
+    }
+
+
+    public static function sendMsg(Request $request)
+    {
+
+        $all = $request->all();
+        // dd( $request->all() );
+
+        $in = '';
+        // $request->goods = [1, 2, 3];
+        foreach ($all as $k => $v) {
+
+            if ($k == 'start') {
+                $start = $v;
+            } else {
+                // if (!empty($v)) {
+                $in .= '--- '.( self::$replace[$k] ?? $k ) . ' ---' . PHP_EOL . $v . PHP_EOL;
+            }
+        }
+
+        $text = (!empty($start) ? $start . PHP_EOL : '')  . $in;
+        // dd($text);
+
+        self::sendTelega($text);
+
+        return true;
     }
 
     /**
@@ -69,12 +104,8 @@ class BackwordController extends Controller
         // $i = $res->toArray();
         // select(['id','naimenovanie', 'dobavka','cena1','cena2','cena3'])->
 
-        $text = self::creatMsg($request->fio, $request->phone, $request->goods, $res);
-
-        // вячеслав
-        Msg::$admins_id[] = 729843637;
-
-        Msg::sendTelegramm($text, null, 1);
+        $text = (string) self::creatMsg($request->fio, $request->phone, $request->goods, $res);
+        self::sendTelega($text);
 
         // dd([
         //     $text
@@ -83,10 +114,24 @@ class BackwordController extends Controller
         //     //$i, 
         //     // $res, $request->goods, 789789
         // ]);
+
         $return = ['result' => true];
         return response()->json($return);
     }
 
+
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public static function sendTelega(string $text)
+    {
+        // вячеслав
+        Msg::$admins_id[] = 729843637;
+        Msg::sendTelegramm($text, null, 1);
+    }
 
 
     /**
