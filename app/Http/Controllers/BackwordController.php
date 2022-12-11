@@ -16,7 +16,6 @@ class BackwordController extends Controller
         'predlogau' => 'Немного о себе'
     ];
 
-
     public static function toNormNum($str)
     {
         return round(str_replace(',', '.', preg_replace("/[^,.0-9]/", '', $str)), 2);
@@ -73,7 +72,7 @@ class BackwordController extends Controller
                 $start = $v;
             } else {
                 // if (!empty($v)) {
-                $in .= '--- '.( self::$replace[$k] ?? $k ) . ' ---' . PHP_EOL . $v . PHP_EOL;
+                $in .= '--- ' . (self::$replace[$k] ?? $k) . ' ---' . PHP_EOL . $v . PHP_EOL;
             }
         }
 
