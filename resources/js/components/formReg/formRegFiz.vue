@@ -421,7 +421,7 @@ const sendForm1 = async () => {
     // адрес реги
   }
   // console.log(777 , ar )
-  await sendForm('Форма быстрой регистрации', ar)
+  await sendForm('Форма регистрации физ.лица (большая)', ar)
 }
 
 // const fio = ref('')

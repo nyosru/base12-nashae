@@ -13,7 +13,21 @@ class BackwordController extends Controller
         'fio' => 'Как зовут',
         'phone' => 'Телефон',
         'socweb' => 'Соц.сеть',
-        'predlogau' => 'Немного о себе'
+        'predlogau' => 'Немного о себе',
+        'f_name' => 'Имя',
+        'f_soname' => 'отчество',
+        'f_family' => 'фамилия',
+        'f_graj' => 'гражданство',
+        'f_dr' => 'день рожденья',
+        'f_inn' => 'ИНН',
+        'f_orgnip' => 'ОГРНИП',
+        'f_socweb' => 'соц сеть',
+        'f_polza' => 'что принесёт в коллектив',
+        'f_pasp_seriya' => 'павспорт серия',
+        'f_pasp_data' => 'паспорт когда выдан',
+        'f_pasp_kem_vudan' => 'паспорт кем выдан',
+        'f_pasp_reg' => 'адрес регистрации',
+
     ];
 
     public static function toNormNum($str)
