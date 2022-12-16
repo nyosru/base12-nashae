@@ -1,9 +1,10 @@
 <template>
   <!-- <nav class="navbar2"> -->
   <span class="nav-up" v-for="m in menu" :key="m">
+    <!-- userId: {{ userId }} -->
     <!-- m {{ m }}    <br/>    <br/> -->
     <router-link
-      xxv-if="m.onAuth != true || (m.onAuth == true && userId > 0)"
+      v-if="m.onAuth != true || (m.onAuth === true && userId > 0)"
       :to="{ path: m.level, meta: { type: m.type ?? 'other' } }"
       :class="{ active: $route.name == m.level }"
       class="nobr"
@@ -20,54 +21,74 @@ import User from './../../use/User.ts'
 
 // export default {
 //   setup(props) {
-    const { userId } = User()
+const { userId, userName, userAvatar } = User()
+// const { userId } = User();
 
-    const menu = [
-      {
-        name: 'О нас',
-        level: 'about',
-        type: 'PageText',
-      },
-      {
-        name: 'Добро',
-        // level: 'vitrin',
-        // level: 'index',
-        level: '/',
-        type: 'Vitrin',
-      },
-      {
-        name: 'Хочу стать участником',
-        level: 'reg',
-        // type: "RegUser",
-        type: 'formReg',
-      },
-      {
-        name: 'Документы',
-        level: 'documents',
-        type: 'PageText',
-      },
-      {
-        name: 'Требы',
-        level: 'trebs',
-        type: 'PageText',
-      },
-      {
-        name: 'Наша экономика',
-        level: 'balance',
-        type: 'PageText',
-      },
-      {
-        name: 'Контакты',
-        level: 'contacts',
-        type: 'PageText',
-      },
-      {
-        name: 'Ваше участие',
-        level: 'participation',
-        type: 'PageText',
-        onAuth: true,
-      },
-    ]
+try {  
+let u2 = document.head.querySelector('meta[name="user-name"]')
+userName.value = u2.content
+} catch (error) {
+  
+}
+
+try{
+let u3 = document.head.querySelector('meta[name="user-avatar"]')
+userAvatar.value = u3.content
+} catch (error) {
+  
+}
+
+let u1 = document.head.querySelector('meta[name="user"]')
+if (u1 && u1.content > 0) {
+  userId.value = u1.content
+}
+
+const menu = [
+  {
+    name: 'О нас',
+    level: 'about',
+    type: 'PageText',
+  },
+  {
+    name: 'Добро',
+    // level: 'vitrin',
+    // level: 'index',
+    level: '/',
+    type: 'Vitrin',
+  },
+  {
+    name: 'Хочу стать участником',
+    level: 'reg',
+    // type: "RegUser",
+    type: 'formReg',
+  },
+  {
+    name: 'Документы',
+    level: 'documents',
+    type: 'PageText',
+  },
+  {
+    name: 'Требы',
+    level: 'trebs',
+    type: 'PageText',
+  },
+  {
+    name: 'Наша экономика',
+    level: 'balance',
+    type: 'PageText',
+  },
+  {
+    name: 'Контакты',
+    level: 'contacts',
+    type: 'PageText',
+  },
+  {
+    name: 'Ваше участие',
+    level: 'participation',
+    type: 'PageText',
+    onAuth: true,
+  },
+]
 
 //     return {
 //       menu,
@@ -83,18 +104,18 @@ import User from './../../use/User.ts'
   margin-right: 15px;
   //   line-height: 36px;
 
-    a {
-  //     padding: 4px 6px;
-  //     margin-right: 5px;
-  //     xmargin-top: 14px;
-  //     xbackground-color: rgba(255, 255, 255, 0.7);
-  //     color: white;
-  //     text-shadow: 0 0 10px black;
-      font-size: 1rem;
-  //     border-radius: 5px;
-    }
+  a {
+    //     padding: 4px 6px;
+    //     margin-right: 5px;
+    //     xmargin-top: 14px;
+    //     xbackground-color: rgba(255, 255, 255, 0.7);
+    //     color: white;
+    //     text-shadow: 0 0 10px black;
+    font-size: 1rem;
+    //     border-radius: 5px;
+  }
 
-    a:HOVER,
+  a:HOVER,
   //   a:HOVER{
   //     xcolor: rgb(255,255,255);
   //     text-shadow: 2px 2px 5px black;
@@ -127,6 +148,7 @@ import User from './../../use/User.ts'
 //   }
 // }
 
-.nobr { white-space: pre; }
-
+.nobr {
+  white-space: pre;
+}
 </style>

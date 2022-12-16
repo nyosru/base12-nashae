@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="utf-8">
     {{-- <meta name="viewport" content="width=device-width, initial-scale=1"> --}}
@@ -43,8 +44,12 @@
     {{-- <link href="https://fonts.googleapis.com/css?family=Roboto:700" rel="stylesheet"> --}}
     {{-- <meta name="csrf-token" content="{{ csrf_token() }}"> --}}
 
-    @if (!empty($user0))
-    <meta name="user" content="{{ $user0->id }}">
+    {{-- @if (!empty($user0)) --}}
+    @if (!empty(Auth::user()))
+        <meta name="user" content="{{ Auth::user()->id }}">
+        <meta name="user-name" content="{{ Auth::user()->name }}">
+        <meta name="user-avatar" content="{{ Auth::user()->avatar }}">
+        <meta name="user2" content="{{ Auth::user()->socIdVk }}">
     @endif
 
     <meta name="referrer" content="strict-origin-when-cross-origin" />
@@ -66,7 +71,25 @@
 
 
 </head>
+
 <body>
+    @if (1 == 2)
+        {{ Auth::user()->socIdVk }}
+        <br />
+        11111
+        <a href="{{ route('vk-enter') }}">войти вк</a>
+
+        <br />
+        @if (Auth::user())
+            {{ Auth::user()->name }}
+            <Br />
+            {{ Auth::user()->id }}
+            <br />
+            <A href="{{ route('logout') }}">exit</a>
+            {{-- <A href="{{ route('auth.logout') }}">exit</a> --}}
+        @endif
+    @endif
+
     <div id="app">
         {{-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
@@ -123,13 +146,13 @@
         </nav>
 
         <main class="py-4"> --}}
-            @yield('content')
+        @yield('content')
         {{-- </main> --}}
     </div>
 </body>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}?{{ date('ymdhis') }}" defer></script>
-    {{-- {{ date('ymdhis') }} --}}
+<!-- Scripts -->
+<script src="{{ asset('js/app.js') }}?{{ date('ymdhis') }}" defer></script>
+{{-- {{ date('ymdhis') }} --}}
 
 </html>

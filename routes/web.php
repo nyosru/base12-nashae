@@ -3,8 +3,29 @@
 use App\Http\Controllers\CalculateCarStController;
 use Illuminate\Support\Facades\Route;
 
-Route::any('/ss', [ CalculateCarStController::class , 'index' ] );
-Route::any('/{any}', fn() => view('welcome'))->where('any', '.*');
+use App\Http\Controllers\SocWebController;
+use Illuminate\Support\Facades\Auth;
+
+// Auth::routes();
+
+// Route::get('/', [ CalculateCarStController::class , 'index' ] );
+Route::any('/ss', [CalculateCarStController::class, 'index']);
+
+Route::any('/vk/enter', [SocWebController::class, 'enter'])->name('vk-enter');
+Route::any('/vk/call-back', [SocWebController::class, 'callBack'])->name('vk-callback');
+
+// Route::get('/logout', function () {
+//     Auth::logout();
+//     return back();
+// })->name('logout');
+
+Route::get('logout', function(){
+    Auth::logout();
+    return redirect('/');
+})->name('logout');
+
+Route::get('/', fn () => view('welcome'))->name('home');
+Route::any('/{any}', fn () => view('welcome'))->where('any', '.*');
 
 // /*
 // |--------------------------------------------------------------------------

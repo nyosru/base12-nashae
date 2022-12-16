@@ -9,12 +9,8 @@
                 <a href="/">
                   <img
                     src="/img/logo.png"
-                    style="
-                      padding-top: 1em;
-                      max-height: 120px;
-                      xmargin-left: 10%;
-                    "
                     alt="Народная экономика"
+                    class="logo"
                   />
                 </a>
               </div>
@@ -25,6 +21,29 @@
                   class="align-self-center text-center"
                   style="width: 100%; xborder: 1px solid green;"
                 >
+                  <template v-if="userId > 0">
+                    <div class="plaha">
+                      <table style="margin: 0 auto;">
+                        <tr>
+                          <td>
+                            <img
+                              v-if="userAvatar.length"
+                              :src="userAvatar"
+                              class="socAvatar"
+                            />
+                          </td>
+                          <td>
+                            {{ userName }}
+                            <br />
+                            <a href="/logout">Выйти</a>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </template>
+                  <template v-else>
+                    <a href="/vk/enter">VK: Войти</a>
+                  </template>
                   <!-- <header-menu></header-menu> -->
                 </div>
               </div>
@@ -59,6 +78,28 @@
 
 <script setup>
 import headerMenu from './HeaderMenu.vue'
+
+import User from './../../use/User.ts'
+const { userId, userName, userAvatar } = User()
 </script>
 
-<style></style>
+<style scope>
+.logo {
+  padding-top: 1em;
+  max-height: 120px;
+  /* xmargin-left: 10%; */
+}
+.socAvatar {
+  max-width: 62px;
+  max-height: 62px;
+  /* float: left; */
+}
+.plaha {
+  width: 1%;
+  min-width: 300px;
+  display: inline-block;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+</style>

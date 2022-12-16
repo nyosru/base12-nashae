@@ -40,19 +40,19 @@ export default [
         component: Rega,
         name: 'Reg',
         meta: { name: 'Регистрация' },
-        children: [{
-                path: 'fiz',
-                // component: Rega,
-                name: 'RegFiz',
-                meta: { name: 'Регистрация Физ лица' },
-            },
-            {
-                path: 'ur',
-                // component: Rega,
-                name: 'RegUr',
-                meta: { name: 'Регистрация Юр лица' },
-            },
-        ],
+        // children: [{
+        //         path: 'fiz',
+        //         // component: Rega,
+        //         name: 'RegFiz',
+        //         meta: { name: 'Регистрация Физ лица' },
+        //     },
+        //     {
+        //         path: 'ur',
+        //         // component: Rega,
+        //         name: 'RegUr',
+        //         meta: { name: 'Регистрация Юр лица' },
+        //     },
+        // ],
     },
 
     { path: '/trebs', component: Trebs, name: 'Trebs' },

@@ -3,9 +3,13 @@ import { ref } from "vue";
 
 // массив для отслеживания выбранных товаров на витрине
 const userId = ref(0);
+const userName = ref('');
+const userAvatar = ref('');
 
 export default function User() {
   return {
-    userId
+    userId,
+    userName,
+    userAvatar
   }
 }
