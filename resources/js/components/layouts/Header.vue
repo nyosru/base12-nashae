@@ -35,14 +35,18 @@
                           <td>
                             {{ userName }}
                             <br />
-                            <a href="/logout">Выйти</a>
+                            <a href="/logout">
+                              Выйти
+                            </a>
                           </td>
                         </tr>
                       </table>
                     </div>
                   </template>
                   <template v-else>
-                    <a href="/vk/enter">VK: Войти</a>
+                    <a class="plaha" href="/vk/enter">
+                              <img src="/storage/logo/vk.svg" width="32"/>
+                              Войти</a>
                   </template>
                   <!-- <header-menu></header-menu> -->
                 </div>
@@ -90,8 +94,8 @@ const { userId, userName, userAvatar } = User()
   /* xmargin-left: 10%; */
 }
 .socAvatar {
-  max-width: 62px;
-  max-height: 62px;
+  max-width: 48px;
+  max-height: 48px;
   /* float: left; */
   border-radius: 5px;
   margin-right: 0.2rem;
