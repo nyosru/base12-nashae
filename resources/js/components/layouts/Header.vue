@@ -93,6 +93,8 @@ const { userId, userName, userAvatar } = User()
   max-width: 62px;
   max-height: 62px;
   /* float: left; */
+  border-radius: 5px;
+  margin-right: 0.2rem;
 }
 .plaha {
   width: 1%;
