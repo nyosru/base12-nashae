@@ -12,6 +12,7 @@ const mix = require('laravel-mix');
  */
 
 mix.copy('resources/img', 'public/img')
+mix.copy('resources/public', 'public')
 
 mix.js('resources/js/app.js', 'public/js')
     .vue()
