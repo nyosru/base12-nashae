@@ -45,7 +45,7 @@
                   </template>
                   <template v-else>
                     <a class="plaha" href="/vk/enter">
-                              <img src="/storage/logo/vk.svg" width="32"/>
+                              <img src="/logo/vk.svg" width="32"/>
                               Войти</a>
                   </template>
                   <!-- <header-menu></header-menu> -->
