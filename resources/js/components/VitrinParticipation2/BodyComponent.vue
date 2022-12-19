@@ -12,34 +12,65 @@
       <div class="col-12">
         <div class="container">
           <div class="row">
-            <div class="col-6">
-              счет
-              <select v-model="form_schet">
-                <option value="11">0011</option>
-                <option value="22">0022</option>
-              </select>
-              <br />
-              организация
-              <select v-model="form_org">
-                <option value="11">0011</option>
-                <option value="22">0022</option>
-              </select>
-              <br />
-              затея
-              <select v-model="form_zateya">
-                <option value="11">0011</option>
-                <option value="22">0022</option>
-              </select>
-              <br />
-              движ
-              <select v-model="form_dvig">
-                <option value="11">0011</option>
-                <option value="22">0022</option>
-              </select>
+            <div class="col-12 col-md-6">
+              <fieldset>
+                <legend>Фильтрация</legend>
+                <label>
+                  <span>
+                    Счет
+                  </span>
+                  <select v-model="filterFormSchet">
+                    <option value="">все</option>
+                    <option v-for="i in filterSchet" :key="i">{{ i }}</option>
+                  </select>
+                </label>
+                <br />
+                <!-- <br />              filterSchet {{ filterSchet }} -->
+                <label>
+                  <span>
+                    Организация
+                  </span>
+                  <select v-model="filterFormOrg">
+                    <option value="">все</option>
+                    <option v-for="i in filterOrg" :key="i">{{ i }}</option>
+                  </select>
+                </label>
+                <!-- <br />
+              FilterFormOrg: {{ filterFormOrg }} -->
+                <!-- <br /> -->
+
+                <!-- <br />              filterOrg: {{ filterOrg }} -->
+                <br />
+                <label>
+                  <span>
+                    Затея
+                  </span>
+                  <select v-model="filterFormZateya">
+                    <option value="">все</option>
+                    <option v-for="i in filterZateya" :key="i">{{ i }}</option>
+                  </select>
+                </label>
+                <!-- <br />              filterZateya: {{ filterZateya }} -->
+                <!-- <br />
+              filterFormZateya: {{ filterFormZateya }} -->
+                <br />
+                <label>
+                  <span>
+                    Движ
+                  </span>
+                  <select v-model="filterFormDvig">
+                    <option value="">все</option>
+                    <option v-for="i in filterDvig" :key="i">{{ i }}</option>
+                  </select>
+                </label>
+                <br />
+                <!-- filterFormDvig: {{ filterFormDvig }} -->
+                <!-- <br />              filterDvig: {{ filterDvig }} -->
+              </fieldset>
             </div>
 
             <div class="col-6">
-              form_schet:
+              <!-- form_schet:
               {{ form_schet }}
               <br />
               form_org:
@@ -49,7 +80,7 @@
               {{ form_zateya }}
               <br />
               form_dvig
-              {{ form_dvig }}
+              {{ form_dvig }} -->
             </div>
 
             <div class="col-12">
@@ -63,17 +94,17 @@
                       <br />
                       затея
                     </td>
-                    <td>дебет нач</td>
-                    <td>кредит нач</td>
-                    <td>дебит об</td>
-                    <td>кредит об</td>
-                    <td>дебит кон</td>
-                    <td>кредит кон</td>
+                    <td>дебет начало</td>
+                    <td>кредит начало</td>
+                    <td>дебит оборот</td>
+                    <td>кредит оборот</td>
+                    <td>дебит конец</td>
+                    <td>кредит конец</td>
                   </tr>
                 </thead>
                 <tbody>
                   <row v-for="el in pageData2" :key="el.id" :el="el"></row>
-                  <tr>
+                  <!-- <tr>
                     <td>
                       счет
                       <br />
@@ -132,19 +163,19 @@
                     <td>кредит об</td>
                     <td>дебит кон</td>
                     <td>кредит кон</td>
-                  </tr>
+                  </tr> -->
                 </tbody>
                 <tfoot>
                   <tr>
                     <td>
                       Итого:
                     </td>
-                    <td>дебет нач</td>
-                    <td>кредит нач</td>
-                    <td>дебит об</td>
-                    <td>кредит об</td>
-                    <td>дебит кон</td>
-                    <td>кредит кон</td>
+                    <td>{{ new Intl.NumberFormat('ru').format(summ1) }}</td>
+                    <td>{{ new Intl.NumberFormat('ru').format(summ2) }}</td>
+                    <td>{{ new Intl.NumberFormat('ru').format(summ3) }}</td>
+                    <td>{{ new Intl.NumberFormat('ru').format(summ4) }}</td>
+                    <td>{{ new Intl.NumberFormat('ru').format(summ5) }}</td>
+                    <td>{{ new Intl.NumberFormat('ru').format(summ6) }}</td>
                   </tr>
                 </tfoot>
               </table>
@@ -155,7 +186,7 @@
             <div class="col-12"></div>
           </div>
           <div class="row" v-if="1 == 2">
-            <div class="col-12" >
+            <div class="col-12">
               <!-- <div class="container">
           <br />
           <br />
@@ -244,20 +275,40 @@ const { userId } = User()
 if (userId.value == 0) {
   window.location.href = '/'
 }
+
 // export default {
 //   components: {
 //     Row,
 //   },
 //   setup(props) {
+
 const filterFirm = ref('')
 const pageData2 = ref([])
 
-const form_schet = ref('')
-const form_org = ref('')
-const form_zateya = ref('')
-const form_dvig = ref('')
+// const form_schet = ref('')
+// const form_org = ref('')
+// const form_zateya = ref('')
+// const form_dvig = ref('')
 
-const { good, loading, getData, headUnique, pageData, loadError } = Datar()
+const filterFormSchet = ref('')
+const filterFormOrg = ref('')
+const filterFormZateya = ref('')
+const filterFormDvig = ref('')
+
+const {
+  good,
+  loading,
+  getData,
+  headUnique,
+  pageData,
+  loadError,
+  filterData,
+
+  filterSchet,
+  filterOrg,
+  filterZateya,
+  filterDvig,
+} = Datar()
 
 getData()
 
@@ -269,9 +320,68 @@ getData()
 //   }
 // })
 
-const sss = (shet, org, zateya, dvig) => {
-  console.log(shet, org, zateya, dvig)
-  return pageData.value;
+const summ1 = ref(0)
+const summ2 = ref(0)
+const summ3 = ref(0)
+const summ4 = ref(0)
+const summ5 = ref(0)
+const summ6 = ref(0)
+
+// function isBigEnough(el) {
+//   return el.nomerSceta >= 10
+// }
+
+const filteringDataArray = (shet = '', org = '', zateya = '', dvig = '') => {
+  // console.log(shet, org, zateya, dvig)
+
+  // если нет массива данных то возвращаем пустой массив
+  if (!pageData.value.length) return []
+
+  let ret = pageData.value.filter(
+    (el) =>
+      (shet.length ? el.nomerSceta == shet : true) &&
+      (org.length ? el.firma == org : true) &&
+      (zateya.length ? el.zateya == zateya : true) &&
+      (dvig.length ? el.dviz == dvig : true),
+  )
+
+  if (ret.length) {
+    filterSchet.value = [
+      ...new Set(Array.from(ret, ({ nomerSceta }) => nomerSceta)),
+    ].sort()
+    filterOrg.value = [...new Set(Array.from(ret, ({ firma }) => firma))].sort()
+    filterZateya.value = [
+      ...new Set(Array.from(ret, ({ zateya }) => zateya)),
+    ].sort()
+    filterDvig.value = [...new Set(Array.from(ret, ({ dviz }) => dviz))].sort()
+
+    summ1.value = ret
+      .map((item) => item['debetNaNacloPerioda'])
+      .reduce((prev, curr) => prev + Number(curr), 0)
+      .toFixed(2)
+    summ2.value = ret
+      .map((item) => item['kreditNaNacloPerioda'])
+      .reduce((prev, curr) => prev + Number(curr), 0)
+      .toFixed(2)
+    summ3.value = ret
+      .map((item) => item['oborotDebet'])
+      .reduce((prev, curr) => prev + Number(curr), 0)
+      .toFixed(2)
+    summ4.value = ret
+      .map((item) => item['oborotKredit'])
+      .reduce((prev, curr) => prev + Number(curr), 0)
+      .toFixed(2)
+    summ5.value = ret
+      .map((item) => item['debetNaKonecPerioda'])
+      .reduce((prev, curr) => prev + Number(curr), 0)
+      .toFixed(2)
+    summ6.value = ret
+      .map((item) => item['kreditNaKonecPerioda'])
+      .reduce((prev, curr) => prev + Number(curr), 0)
+      .toFixed(2)
+  }
+  // return pageData.value
+  return ret
 }
 
 watchEffect(() => {
@@ -281,7 +391,25 @@ watchEffect(() => {
   //   form_zateya.value.length ||
   //   form_dvig.value.length
   // ) {
-    pageData2.value = sss(form_schet.value, form_org.value, form_zateya.value, form_dvig.value)
+  // let ar = sss(form_schet.value, form_org.value, form_zateya.value, form_dvig.value)
+  // pageData2.value = ar
+
+  pageData2.value = filteringDataArray(
+    filterFormSchet.value,
+    filterFormOrg.value,
+    filterFormZateya.value,
+    filterFormDvig.value,
+  )
+  // pageData2.value = ar
+
+  // summ1.value = pageData2.value.map(item => item['debet-na-naclo-perioda'] ).reduce((prev, curr) => prev + curr, 0);
+  // summ2.value = ar.map(item => item['kredit-na-naclo-perioda'] ).reduce((prev, curr) => prev + curr, 0);
+  // summ3.value = ar.map(item => item['oborot-debet'] ).reduce((prev, curr) => prev + curr, 0);
+  // summ4.value = ar.map(item => item['oborot-kredit'] ).reduce((prev, curr) => prev + curr, 0);
+  // summ5.value = ar.map(item => item['debet-na-konec-perioda'] ).reduce((prev, curr) => prev + curr, 0);
+  // summ6.value = ar.map(item => item['kredit-na-konec-perioda'] ).reduce((prev, curr) => prev + curr, 0);
+  // console.log(sumall);
+
   // }
 })
 
@@ -348,7 +476,34 @@ tfoot {
   background-color: rgba(200, 255, 200, 0.9);
   z-index: 200;
 }
-// tfoot td{
-//   border-top: 2px solid gray;
-// }
+tfoot td {
+  //   border-top: 2px solid gray;
+  text-align: right;
+}
+
+select {
+  width: 150px;
+}
+label > span {
+  width: 150px;
+  display: inline-block;
+}
+fieldset {
+  border: 1px solid green;
+  text-align: center;
+  box-shadow: 0 0 10px gray;
+  margin: 15px;
+  border-radius: 10px;
+  // padding: 5px 15px;
+  padding-bottom: 15px;
+}
+
+thead td {
+  border-right: 1px solid gray;
+  text-align: right;
+  font-weight: bold;
+}
+thead td:first-child {
+  text-align: left;
+}
 </style>

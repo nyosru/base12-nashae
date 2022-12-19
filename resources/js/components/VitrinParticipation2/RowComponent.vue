@@ -19,49 +19,68 @@
     <!-- <td>{{ el.firma }}</td> -->
     <!-- <td>{{ el.dokument }}</td> -->
     <td>
-      <span @click="show1 = !show1">
-        {{  el.id }}
-        <!-- {{ el.dobro.length > 0 ? el.dobro : '<>' }} -->
-      </span>
-      <pre v-if="show1">{{ el }}</pre>
 
-      <!-- el: {{  el }} -->
+      <!-- <span @click="show1 = !show1">        {{ el.id }}            </span>      <pre v-if="show1">{{ el }}</pre> -->
 
-      <br />
-      {{ el['nomer-sceta'] }}
+      <!-- el: {{  el }} <br/> -->
+      {{ el['nomerSceta'] }}
       <br />
       {{ el.firma }}
       <br />
-      {{ el.dviz }}
+      {{ el.zateya }}
     </td>
     <!-- <td class="trr">{{ el.debet.length ? el.debet : '-' }}</td> -->
     <!-- <td class="trr">{{ el.kredit.length ? el.kredit : '-' }}</td> -->
 
-    <td class="text-rigth">
+    <td  class="trr">
       {{
-        el['debet-na-naclo-perioda'].length && el['debet-na-naclo-perioda'] != 0 ? el['debet-na-naclo-perioda'] : '-'
-      }}
-    </td>
-    <td>
-      {{
-        el['kredit-na-naclo-perioda'].length && el['kredit-na-naclo-perioda'] != 0
-          ? el['kredit-na-naclo-perioda']
+        el['debetNaNacloPerioda'].length && el['debetNaNacloPerioda'] != 0
+          ? new Intl.NumberFormat("ru").format( el['debetNaNacloPerioda'] )
           : '-'
       }}
+      <!-- <br />      {{ el['debetNaNacloPerioda'] }} -->
     </td>
-    <td>{{ el['oborot-debet'].length && el['oborot-debet'] != 0 ? el['oborot-debet'] : '-' }}</td>
-    <td>{{ el['oborot-kredit'].length && el['oborot-kredit'] != 0 ? el['oborot-kredit'] : '-' }}</td>
-    <td>
+    <td class="trr">
       {{
-        el['debet-na-konec-perioda'].length && el['debet-na-konec-perioda'] != 0 ? el['debet-na-konec-perioda'] : '-'
-      }}
-    </td>
-    <td>
-      {{
-        el['kredit-na-konec-perioda'].length && el['kredit-na-konec-perioda'] != 0 
-          ? el['kredit-na-konec-perioda']
+        el['kreditNaNacloPerioda'].length &&
+        el['kreditNaNacloPerioda'] != 0
+          ? new Intl.NumberFormat("ru").format( el['kreditNaNacloPerioda'] )
           : '-'
       }}
+      <!-- <br />      {{ el['kreditNaNacloPerioda'] }} -->
+    </td>
+    <td class="trr">
+      {{
+        el['oborotDebet'].length && el['oborotDebet'] != 0
+          ? new Intl.NumberFormat("ru").format(  el['oborotDebet'] )
+          : '-'
+      }}
+      <!-- <br />      {{ el['oborotDebet'] }} -->
+    </td>
+    <td class="trr">
+      {{
+        el['oborotKredit'].length && el['oborotKredit'] != 0
+          ? new Intl.NumberFormat("ru").format( el['oborotKredit'] )
+          : '-'
+      }}
+      <!-- <br />      {{ el['oborotKredit'] }} -->
+    </td>
+    <td class="trr">
+      {{
+        el['debetNaKonecPerioda'].length && el['debetNaKonecPerioda'] != 0
+          ? new Intl.NumberFormat("ru").format( el['debetNaKonecPerioda'] )
+          : '-'
+      }}
+      <!-- <br />      {{ el['debetNaKonecPerioda'] }} -->
+    </td>
+    <td class="trr">
+      {{
+        el['kreditNaKonecPerioda'].length &&
+        el['kreditNaKonecPerioda'] != 0
+          ? new Intl.NumberFormat("ru").format( el['kreditNaKonecPerioda'] )
+          : '-'
+      }}
+      <!-- <br />      {{ el['kreditNaKonecPerioda'] }} -->
     </td>
   </tr>
 </template>
@@ -140,7 +159,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" scoped >
 .trr {
   text-align: right;
 }

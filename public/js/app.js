@@ -23501,6 +23501,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _RowComponent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./RowComponent.vue */ "./resources/js/components/VitrinParticipation2/RowComponent.vue");
 /* harmony import */ var _Datar_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Datar.js */ "./resources/js/components/VitrinParticipation2/Datar.js");
 /* harmony import */ var _use_User_ts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../../use/User.ts */ "./resources/js/use/User.ts");
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
 
 // import Row from "./RowHeadComponent.vue";
@@ -23518,24 +23524,37 @@ __webpack_require__.r(__webpack_exports__);
     if (userId.value == 0) {
       window.location.href = '/';
     }
+
     // export default {
     //   components: {
     //     Row,
     //   },
     //   setup(props) {
+
     var filterFirm = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)('');
     var pageData2 = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)([]);
-    var form_schet = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)('');
-    var form_org = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)('');
-    var form_zateya = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)('');
-    var form_dvig = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)('');
+
+    // const form_schet = ref('')
+    // const form_org = ref('')
+    // const form_zateya = ref('')
+    // const form_dvig = ref('')
+
+    var filterFormSchet = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)('');
+    var filterFormOrg = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)('');
+    var filterFormZateya = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)('');
+    var filterFormDvig = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)('');
     var _Datar = (0,_Datar_js__WEBPACK_IMPORTED_MODULE_2__["default"])(),
       good = _Datar.good,
       loading = _Datar.loading,
       getData = _Datar.getData,
       headUnique = _Datar.headUnique,
       pageData = _Datar.pageData,
-      loadError = _Datar.loadError;
+      loadError = _Datar.loadError,
+      filterData = _Datar.filterData,
+      filterSchet = _Datar.filterSchet,
+      filterOrg = _Datar.filterOrg,
+      filterZateya = _Datar.filterZateya,
+      filterDvig = _Datar.filterDvig;
     getData();
 
     // watchEffect(() => {
@@ -23546,9 +23565,79 @@ __webpack_require__.r(__webpack_exports__);
     //   }
     // })
 
-    var sss = function sss(shet, org, zateya, dvig) {
-      console.log(shet, org, zateya, dvig);
-      return pageData.value;
+    var summ1 = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(0);
+    var summ2 = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(0);
+    var summ3 = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(0);
+    var summ4 = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(0);
+    var summ5 = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(0);
+    var summ6 = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(0);
+
+    // function isBigEnough(el) {
+    //   return el.nomerSceta >= 10
+    // }
+
+    var filteringDataArray = function filteringDataArray() {
+      var shet = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+      var org = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
+      var zateya = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '';
+      var dvig = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
+      // console.log(shet, org, zateya, dvig)
+
+      // если нет массива данных то возвращаем пустой массив
+      if (!pageData.value.length) return [];
+      var ret = pageData.value.filter(function (el) {
+        return (shet.length ? el.nomerSceta == shet : true) && (org.length ? el.firma == org : true) && (zateya.length ? el.zateya == zateya : true) && (dvig.length ? el.dviz == dvig : true);
+      });
+      if (ret.length) {
+        filterSchet.value = _toConsumableArray(new Set(Array.from(ret, function (_ref2) {
+          var nomerSceta = _ref2.nomerSceta;
+          return nomerSceta;
+        }))).sort();
+        filterOrg.value = _toConsumableArray(new Set(Array.from(ret, function (_ref3) {
+          var firma = _ref3.firma;
+          return firma;
+        }))).sort();
+        filterZateya.value = _toConsumableArray(new Set(Array.from(ret, function (_ref4) {
+          var zateya = _ref4.zateya;
+          return zateya;
+        }))).sort();
+        filterDvig.value = _toConsumableArray(new Set(Array.from(ret, function (_ref5) {
+          var dviz = _ref5.dviz;
+          return dviz;
+        }))).sort();
+        summ1.value = ret.map(function (item) {
+          return item['debetNaNacloPerioda'];
+        }).reduce(function (prev, curr) {
+          return prev + Number(curr);
+        }, 0).toFixed(2);
+        summ2.value = ret.map(function (item) {
+          return item['kreditNaNacloPerioda'];
+        }).reduce(function (prev, curr) {
+          return prev + Number(curr);
+        }, 0).toFixed(2);
+        summ3.value = ret.map(function (item) {
+          return item['oborotDebet'];
+        }).reduce(function (prev, curr) {
+          return prev + Number(curr);
+        }, 0).toFixed(2);
+        summ4.value = ret.map(function (item) {
+          return item['oborotKredit'];
+        }).reduce(function (prev, curr) {
+          return prev + Number(curr);
+        }, 0).toFixed(2);
+        summ5.value = ret.map(function (item) {
+          return item['debetNaKonecPerioda'];
+        }).reduce(function (prev, curr) {
+          return prev + Number(curr);
+        }, 0).toFixed(2);
+        summ6.value = ret.map(function (item) {
+          return item['kreditNaKonecPerioda'];
+        }).reduce(function (prev, curr) {
+          return prev + Number(curr);
+        }, 0).toFixed(2);
+      }
+      // return pageData.value
+      return ret;
     };
     (0,vue__WEBPACK_IMPORTED_MODULE_0__.watchEffect)(function () {
       // if (
@@ -23557,7 +23646,20 @@ __webpack_require__.r(__webpack_exports__);
       //   form_zateya.value.length ||
       //   form_dvig.value.length
       // ) {
-      pageData2.value = sss(form_schet.value, form_org.value, form_zateya.value, form_dvig.value);
+      // let ar = sss(form_schet.value, form_org.value, form_zateya.value, form_dvig.value)
+      // pageData2.value = ar
+
+      pageData2.value = filteringDataArray(filterFormSchet.value, filterFormOrg.value, filterFormZateya.value, filterFormDvig.value);
+      // pageData2.value = ar
+
+      // summ1.value = pageData2.value.map(item => item['debet-na-naclo-perioda'] ).reduce((prev, curr) => prev + curr, 0);
+      // summ2.value = ar.map(item => item['kredit-na-naclo-perioda'] ).reduce((prev, curr) => prev + curr, 0);
+      // summ3.value = ar.map(item => item['oborot-debet'] ).reduce((prev, curr) => prev + curr, 0);
+      // summ4.value = ar.map(item => item['oborot-kredit'] ).reduce((prev, curr) => prev + curr, 0);
+      // summ5.value = ar.map(item => item['debet-na-konec-perioda'] ).reduce((prev, curr) => prev + curr, 0);
+      // summ6.value = ar.map(item => item['kredit-na-konec-perioda'] ).reduce((prev, curr) => prev + curr, 0);
+      // console.log(sumall);
+
       // }
     });
 
@@ -23576,17 +23678,28 @@ __webpack_require__.r(__webpack_exports__);
       userId: userId,
       filterFirm: filterFirm,
       pageData2: pageData2,
-      form_schet: form_schet,
-      form_org: form_org,
-      form_zateya: form_zateya,
-      form_dvig: form_dvig,
+      filterFormSchet: filterFormSchet,
+      filterFormOrg: filterFormOrg,
+      filterFormZateya: filterFormZateya,
+      filterFormDvig: filterFormDvig,
       good: good,
       loading: loading,
       getData: getData,
       headUnique: headUnique,
       pageData: pageData,
       loadError: loadError,
-      sss: sss,
+      filterData: filterData,
+      filterSchet: filterSchet,
+      filterOrg: filterOrg,
+      filterZateya: filterZateya,
+      filterDvig: filterDvig,
+      summ1: summ1,
+      summ2: summ2,
+      summ3: summ3,
+      summ4: summ4,
+      summ5: summ5,
+      summ6: summ6,
+      filteringDataArray: filteringDataArray,
       ref: vue__WEBPACK_IMPORTED_MODULE_0__.ref,
       watchEffect: vue__WEBPACK_IMPORTED_MODULE_0__.watchEffect,
       Row: _RowComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
@@ -26496,123 +26609,118 @@ var _hoisted_8 = {
   "class": "row"
 };
 var _hoisted_9 = {
-  "class": "col-6"
+  "class": "col-12 col-md-6"
 };
-var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" счет ");
-var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
-  value: "11"
-}, "0011", -1 /* HOISTED */);
+var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("legend", null, "Фильтрация", -1 /* HOISTED */);
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, " Счет ", -1 /* HOISTED */);
 var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
-  value: "22"
-}, "0022", -1 /* HOISTED */);
-var _hoisted_13 = [_hoisted_11, _hoisted_12];
-var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
-var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" организация ");
-var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
-  value: "11"
-}, "0011", -1 /* HOISTED */);
-var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
-  value: "22"
-}, "0022", -1 /* HOISTED */);
-var _hoisted_18 = [_hoisted_16, _hoisted_17];
+  value: ""
+}, "все", -1 /* HOISTED */);
+var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
+var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, " Организация ", -1 /* HOISTED */);
+var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+  value: ""
+}, "все", -1 /* HOISTED */);
+var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
+var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, " Затея ", -1 /* HOISTED */);
+var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+  value: ""
+}, "все", -1 /* HOISTED */);
 var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
-var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" затея ");
+var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, " Движ ", -1 /* HOISTED */);
 var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
-  value: "11"
-}, "0011", -1 /* HOISTED */);
-var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
-  value: "22"
-}, "0022", -1 /* HOISTED */);
-var _hoisted_23 = [_hoisted_21, _hoisted_22];
-var _hoisted_24 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
-var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" движ ");
-var _hoisted_26 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
-  value: "11"
-}, "0011", -1 /* HOISTED */);
-var _hoisted_27 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
-  value: "22"
-}, "0022", -1 /* HOISTED */);
-var _hoisted_28 = [_hoisted_26, _hoisted_27];
-var _hoisted_29 = {
+  value: ""
+}, "все", -1 /* HOISTED */);
+var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
+var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "col-6"
-};
-var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
-var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
-var _hoisted_32 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
-var _hoisted_33 = {
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" form_schet:\n              {{ form_schet }}\n              <br />\n              form_org:\n              {{ form_org }}\n              <br />\n              form_zateya\n              {{ form_zateya }}\n              <br />\n              form_dvig\n              {{ form_dvig }} ")], -1 /* HOISTED */);
+var _hoisted_24 = {
   "class": "col-12"
 };
-var _hoisted_34 = {
+var _hoisted_25 = {
   "class": "table table-striped"
 };
-var _hoisted_35 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("thead", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" счет "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" организация "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" затея ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "дебет нач"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "кредит нач"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "дебит об"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "кредит об"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "дебит кон"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "кредит кон")])], -1 /* HOISTED */);
-var _hoisted_36 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" счет "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" организация "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" затея ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "дебет нач"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "кредит нач"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "дебит об"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "кредит об"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "дебит кон"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "кредит кон")], -1 /* HOISTED */);
-var _hoisted_37 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" счет "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" организация "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" затея ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "дебет нач"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "кредит нач"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "дебит об"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "кредит об"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "дебит кон"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "кредит кон")], -1 /* HOISTED */);
-var _hoisted_38 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" счет "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" организация "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" затея ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "дебет нач"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "кредит нач"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "дебит об"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "кредит об"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "дебит кон"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "кредит кон")], -1 /* HOISTED */);
-var _hoisted_39 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" счет "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" организация "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" затея ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "дебет нач"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "кредит нач"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "дебит об"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "кредит об"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "дебит кон"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "кредит кон")], -1 /* HOISTED */);
-var _hoisted_40 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tfoot", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, " Итого: "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "дебет нач"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "кредит нач"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "дебит об"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "кредит об"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "дебит кон"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "кредит кон")])], -1 /* HOISTED */);
-var _hoisted_41 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_26 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("thead", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" счет "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" организация "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" затея ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "дебет начало"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "кредит начало"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "дебит оборот"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "кредит оборот"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "дебит конец"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "кредит конец")])], -1 /* HOISTED */);
+var _hoisted_27 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, " Итого: ", -1 /* HOISTED */);
+var _hoisted_28 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "col-12"
 }, null, -1 /* HOISTED */);
-var _hoisted_42 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_29 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "col-12"
 }, null, -1 /* HOISTED */);
-var _hoisted_43 = {
+var _hoisted_30 = {
   key: 0,
   "class": "row"
 };
-var _hoisted_44 = {
+var _hoisted_31 = {
   "class": "col-12"
 };
-var _hoisted_45 = {
+var _hoisted_32 = {
   "class": "btn-list"
 };
-var _hoisted_46 = {
+var _hoisted_33 = {
   key: 0
 };
-var _hoisted_47 = {
+var _hoisted_34 = {
   key: 1
 };
-var _hoisted_48 = {
+var _hoisted_35 = {
   "class": "div-top-3"
 };
-var _hoisted_49 = ["onClick"];
-var _hoisted_50 = {
+var _hoisted_36 = ["onClick"];
+var _hoisted_37 = {
   key: 1,
   "class": "row justify-content-center"
 };
-var _hoisted_51 = {
+var _hoisted_38 = {
   "class": "col-12 col-md-10 col-lg-9 col-xl-6"
 };
-var _hoisted_52 = {
+var _hoisted_39 = {
   key: 0,
   "class": "table table-bordered table-striped"
 };
-var _hoisted_53 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("thead", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <th>Кооператив</th> "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Действие"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Потребление"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Вклад")])], -1 /* HOISTED */);
+var _hoisted_40 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("thead", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <th>Кооператив</th> "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Действие"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Потребление"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Вклад")])], -1 /* HOISTED */);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [$setup.loading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_2, _hoisted_4)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [$setup.loading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_2, _hoisted_4)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("fieldset", null, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, [_hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
-      return $setup.form_schet = $event;
+      return $setup.filterFormSchet = $event;
     })
-  }, _hoisted_13, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $setup.form_schet]]), _hoisted_14, _hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, [_hoisted_12, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.filterSchet, function (i) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", {
+      key: i
+    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(i), 1 /* TEXT */);
+  }), 128 /* KEYED_FRAGMENT */))], 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $setup.filterFormSchet]])]), _hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <br />              filterSchet {{ filterSchet }} "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, [_hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
-      return $setup.form_org = $event;
+      return $setup.filterFormOrg = $event;
     })
-  }, _hoisted_18, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $setup.form_org]]), _hoisted_19, _hoisted_20, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, [_hoisted_15, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.filterOrg, function (i) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", {
+      key: i
+    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(i), 1 /* TEXT */);
+  }), 128 /* KEYED_FRAGMENT */))], 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $setup.filterFormOrg]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <br />\n              FilterFormOrg: {{ filterFormOrg }} "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <br /> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <br />              filterOrg: {{ filterOrg }} "), _hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, [_hoisted_17, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
-      return $setup.form_zateya = $event;
+      return $setup.filterFormZateya = $event;
     })
-  }, _hoisted_23, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $setup.form_zateya]]), _hoisted_24, _hoisted_25, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, [_hoisted_18, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.filterZateya, function (i) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", {
+      key: i
+    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(i), 1 /* TEXT */);
+  }), 128 /* KEYED_FRAGMENT */))], 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $setup.filterFormZateya]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <br />              filterZateya: {{ filterZateya }} "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <br />\n              filterFormZateya: {{ filterFormZateya }} "), _hoisted_19, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, [_hoisted_20, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "onUpdate:modelValue": _cache[3] || (_cache[3] = function ($event) {
-      return $setup.form_dvig = $event;
+      return $setup.filterFormDvig = $event;
     })
-  }, _hoisted_28, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $setup.form_dvig]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_29, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" form_schet: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.form_schet) + " ", 1 /* TEXT */), _hoisted_30, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" form_org: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.form_org) + " ", 1 /* TEXT */), _hoisted_31, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" form_zateya " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.form_zateya) + " ", 1 /* TEXT */), _hoisted_32, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" form_dvig " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.form_dvig), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_33, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_34, [_hoisted_35, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.pageData2, function (el) {
+  }, [_hoisted_21, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.filterDvig, function (i) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", {
+      key: i
+    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(i), 1 /* TEXT */);
+  }), 128 /* KEYED_FRAGMENT */))], 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $setup.filterFormDvig]])]), _hoisted_22, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" filterFormDvig: {{ filterFormDvig }} "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <br />              filterDvig: {{ filterDvig }} ")])]), _hoisted_23, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_24, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_25, [_hoisted_26, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.pageData2, function (el) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["Row"], {
       key: el.id,
       el: el
     }, null, 8 /* PROPS */, ["el"]);
-  }), 128 /* KEYED_FRAGMENT */)), _hoisted_36, _hoisted_37, _hoisted_38, _hoisted_39]), _hoisted_40])]), _hoisted_41, _hoisted_42]),  false ? (0) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true),  false ? (0) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])]))]);
+  }), 128 /* KEYED_FRAGMENT */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <tr>\n                    <td>\n                      счет\n                      <br />\n                      организация\n                      <br />\n                      затея\n                    </td>\n                    <td>дебет нач</td>\n                    <td>кредит нач</td>\n                    <td>дебит об</td>\n                    <td>кредит об</td>\n                    <td>дебит кон</td>\n                    <td>кредит кон</td>\n                  </tr>\n                  <tr>\n                    <td>\n                      счет\n                      <br />\n                      организация\n                      <br />\n                      затея\n                    </td>\n                    <td>дебет нач</td>\n                    <td>кредит нач</td>\n                    <td>дебит об</td>\n                    <td>кредит об</td>\n                    <td>дебит кон</td>\n                    <td>кредит кон</td>\n                  </tr>\n                  <tr>\n                    <td>\n                      счет\n                      <br />\n                      организация\n                      <br />\n                      затея\n                    </td>\n                    <td>дебет нач</td>\n                    <td>кредит нач</td>\n                    <td>дебит об</td>\n                    <td>кредит об</td>\n                    <td>дебит кон</td>\n                    <td>кредит кон</td>\n                  </tr>\n                  <tr>\n                    <td>\n                      счет\n                      <br />\n                      организация\n                      <br />\n                      затея\n                    </td>\n                    <td>дебет нач</td>\n                    <td>кредит нач</td>\n                    <td>дебит об</td>\n                    <td>кредит об</td>\n                    <td>дебит кон</td>\n                    <td>кредит кон</td>\n                  </tr> ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tfoot", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [_hoisted_27, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(new Intl.NumberFormat('ru').format($setup.summ1)), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(new Intl.NumberFormat('ru').format($setup.summ2)), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(new Intl.NumberFormat('ru').format($setup.summ3)), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(new Intl.NumberFormat('ru').format($setup.summ4)), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(new Intl.NumberFormat('ru').format($setup.summ5)), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(new Intl.NumberFormat('ru').format($setup.summ6)), 1 /* TEXT */)])])])]), _hoisted_28, _hoisted_29]),  false ? (0) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true),  false ? (0) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])]))]);
 }
 
 /***/ }),
@@ -26633,27 +26741,32 @@ __webpack_require__.r(__webpack_exports__);
 var _withScopeId = function _withScopeId(n) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.pushScopeId)("data-v-6037dd10"), n = n(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.popScopeId)(), n;
 };
-var _hoisted_1 = {
-  key: 0
-};
+var _hoisted_1 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
+});
 var _hoisted_2 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
 });
-var _hoisted_3 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
-});
-var _hoisted_4 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
-});
+var _hoisted_3 = {
+  "class": "trr"
+};
+var _hoisted_4 = {
+  "class": "trr"
+};
 var _hoisted_5 = {
-  "class": "text-rigth"
+  "class": "trr"
+};
+var _hoisted_6 = {
+  "class": "trr"
+};
+var _hoisted_7 = {
+  "class": "trr"
+};
+var _hoisted_8 = {
+  "class": "trr"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <tr>\n    <td>\n      счет\n      <br />\n      организация\n      <br />\n      затея\n    </td>\n    <td>дебет нач</td>\n    <td>кредит нач</td>\n    <td>дебит об</td>\n    <td>кредит об</td>\n    <td>дебит кон</td>\n    <td>кредит кон</td>\n  </tr> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <td>{{ el.firma }}</td> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <td>{{ el.dokument }}</td> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-    onClick: _cache[0] || (_cache[0] = function ($event) {
-      return $data.show1 = !$data.show1;
-    })
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.el.id), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" {{ el.dobro.length > 0 ? el.dobro : '<>' }} ")]), $data.show1 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("pre", _hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.el), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" el: {{  el }} "), _hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.el['nomer-sceta']) + " ", 1 /* TEXT */), _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.el.firma) + " ", 1 /* TEXT */), _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.el.dviz), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <td class=\"trr\">{{ el.debet.length ? el.debet : '-' }}</td> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <td class=\"trr\">{{ el.kredit.length ? el.kredit : '-' }}</td> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.el['debet-na-naclo-perioda'].length && $props.el['debet-na-naclo-perioda'] != 0 ? $props.el['debet-na-naclo-perioda'] : '-'), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.el['kredit-na-naclo-perioda'].length && $props.el['kredit-na-naclo-perioda'] != 0 ? $props.el['kredit-na-naclo-perioda'] : '-'), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.el['oborot-debet'].length && $props.el['oborot-debet'] != 0 ? $props.el['oborot-debet'] : '-'), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.el['oborot-kredit'].length && $props.el['oborot-kredit'] != 0 ? $props.el['oborot-kredit'] : '-'), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.el['debet-na-konec-perioda'].length && $props.el['debet-na-konec-perioda'] != 0 ? $props.el['debet-na-konec-perioda'] : '-'), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.el['kredit-na-konec-perioda'].length && $props.el['kredit-na-konec-perioda'] != 0 ? $props.el['kredit-na-konec-perioda'] : '-'), 1 /* TEXT */)])], 2112 /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */);
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <tr>\n    <td>\n      счет\n      <br />\n      организация\n      <br />\n      затея\n    </td>\n    <td>дебет нач</td>\n    <td>кредит нач</td>\n    <td>дебит об</td>\n    <td>кредит об</td>\n    <td>дебит кон</td>\n    <td>кредит кон</td>\n  </tr> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <td>{{ el.firma }}</td> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <td>{{ el.dokument }}</td> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <span @click=\"show1 = !show1\">        {{ el.id }}            </span>      <pre v-if=\"show1\">{{ el }}</pre> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" el: {{  el }} <br/> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.el['nomerSceta']) + " ", 1 /* TEXT */), _hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.el.firma) + " ", 1 /* TEXT */), _hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.el.zateya), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <td class=\"trr\">{{ el.debet.length ? el.debet : '-' }}</td> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <td class=\"trr\">{{ el.kredit.length ? el.kredit : '-' }}</td> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.el['debetNaNacloPerioda'].length && $props.el['debetNaNacloPerioda'] != 0 ? new Intl.NumberFormat("ru").format($props.el['debetNaNacloPerioda']) : '-'), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <br />      {{ el['debetNaNacloPerioda'] }} ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.el['kreditNaNacloPerioda'].length && $props.el['kreditNaNacloPerioda'] != 0 ? new Intl.NumberFormat("ru").format($props.el['kreditNaNacloPerioda']) : '-'), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <br />      {{ el['kreditNaNacloPerioda'] }} ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.el['oborotDebet'].length && $props.el['oborotDebet'] != 0 ? new Intl.NumberFormat("ru").format($props.el['oborotDebet']) : '-'), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <br />      {{ el['oborotDebet'] }} ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.el['oborotKredit'].length && $props.el['oborotKredit'] != 0 ? new Intl.NumberFormat("ru").format($props.el['oborotKredit']) : '-'), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <br />      {{ el['oborotKredit'] }} ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.el['debetNaKonecPerioda'].length && $props.el['debetNaKonecPerioda'] != 0 ? new Intl.NumberFormat("ru").format($props.el['debetNaKonecPerioda']) : '-'), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <br />      {{ el['debetNaKonecPerioda'] }} ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.el['kreditNaKonecPerioda'].length && $props.el['kreditNaKonecPerioda'] != 0 ? new Intl.NumberFormat("ru").format($props.el['kreditNaKonecPerioda']) : '-'), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <br />      {{ el['kreditNaKonecPerioda'] }} ")])])], 2112 /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */);
 }
 
 /***/ }),
@@ -29291,6 +29404,10 @@ var loading = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(true);
 var loadError = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(false);
 var pageData = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)('');
 var headUnique = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)([]);
+var filterSchet = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)([]);
+var filterOrg = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)([]);
+var filterZateya = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)([]);
+var filterDvig = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)([]);
 
 /**
  * получить данные по странице
@@ -29311,7 +29428,7 @@ var getData = /*#__PURE__*/function () {
               break;
             }
             _context.next = 6;
-            return axios__WEBPACK_IMPORTED_MODULE_1___default().get("/api/ocbs").then(function (response) {
+            return axios__WEBPACK_IMPORTED_MODULE_1___default().get('/api/ocbs').then(function (response) {
               // console.log('rs', response.status);
 
               pageData.value = response.data.data;
@@ -29343,7 +29460,11 @@ function Datar() {
     getData: getData,
     pageData: pageData,
     loadError: loadError,
-    listScheta: listScheta
+    listScheta: listScheta,
+    filterSchet: filterSchet,
+    filterOrg: filterOrg,
+    filterZateya: filterZateya,
+    filterDvig: filterDvig
   };
 }
 
@@ -35380,7 +35501,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "pre {\n  max-height: 300px;\n  overflow: auto;\n}\n.list_head,\n.table thead {\n  position: -moz-sticky;\n  position: -ms-sticky;\n  position: -o-sticky;\n  position: sticky;\n  top: 40px;\n  background-color: rgba(200, 200, 255, 0.8);\n  z-index: 200;\n}\n.item {\n  margin-top: 3px;\n  margin-bottom: 3px;\n}\n.item:nth-child(2n) {\n  background-color: rgba(0, 0, 0, 0.1);\n}\n.btn-list {\n  text-align: center;\n  margin-top: 3vh;\n  margin-bottom: 3vh;\n}\n.btn-list button {\n  margin-right: 1vw;\n}\n.div-top-3 {\n  position: sticky;\n  top: 60px;\n  z-index: 200;\n}\ntfoot {\n  position: -moz-sticky;\n  position: -ms-sticky;\n  position: -o-sticky;\n  position: sticky;\n  bottom: 0;\n  background-color: rgba(200, 255, 200, 0.9);\n  z-index: 200;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "pre {\n  max-height: 300px;\n  overflow: auto;\n}\n.list_head,\n.table thead {\n  position: -moz-sticky;\n  position: -ms-sticky;\n  position: -o-sticky;\n  position: sticky;\n  top: 40px;\n  background-color: rgba(200, 200, 255, 0.8);\n  z-index: 200;\n}\n.item {\n  margin-top: 3px;\n  margin-bottom: 3px;\n}\n.item:nth-child(2n) {\n  background-color: rgba(0, 0, 0, 0.1);\n}\n.btn-list {\n  text-align: center;\n  margin-top: 3vh;\n  margin-bottom: 3vh;\n}\n.btn-list button {\n  margin-right: 1vw;\n}\n.div-top-3 {\n  position: sticky;\n  top: 60px;\n  z-index: 200;\n}\ntfoot {\n  position: -moz-sticky;\n  position: -ms-sticky;\n  position: -o-sticky;\n  position: sticky;\n  bottom: 0;\n  background-color: rgba(200, 255, 200, 0.9);\n  z-index: 200;\n}\ntfoot td {\n  text-align: right;\n}\nselect {\n  width: 150px;\n}\nlabel > span {\n  width: 150px;\n  display: inline-block;\n}\nfieldset {\n  border: 1px solid green;\n  text-align: center;\n  box-shadow: 0 0 10px gray;\n  margin: 15px;\n  border-radius: 10px;\n  padding-bottom: 15px;\n}\nthead td {\n  border-right: 1px solid gray;\n  text-align: right;\n  font-weight: bold;\n}\nthead td:first-child {\n  text-align: left;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

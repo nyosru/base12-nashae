@@ -15,12 +15,12 @@ class ShopController extends Controller
 
     /** поля которые приводим к цифре */
     static public $polya_number_rub = [
-        'debet-na-naclo-perioda',
-        'kredit-na-naclo-perioda',
-        'oborot-debet',
-        'oborot-kredit',
-        'debet-na-konec-perioda',
-        'kredit-na-konec-perioda'
+        'debetNaNacloPerioda',
+        'kreditNaNacloPerioda',
+        'oborotDebet',
+        'oborotKredit',
+        'debetNaKonecPerioda',
+        'kreditNaKonecPerioda'
     ];
 
     /**
@@ -168,9 +168,13 @@ class ShopController extends Controller
                 // тащим шапку, первый проход
                 if (empty($return['data_head'])) {
                     $return['data_head_ru0'] = explode(';', $row);
-                    foreach ($return['data_head_ru0'] as $k => $r) {
-                        if (!empty($r)) {
-                            $return['data_head'][$k] = !empty($r) ? str_slug($r) : null;
+                    foreach ($return['data_head_ru0'] as $k => $r0 ) {
+                        if (!empty($r0)) {
+
+                            $r = camel_case(str_slug($r0));
+
+                            // $return['data_head'][$k] = !empty($r) ? str_slug($r) : null;
+                            $return['data_head'][$k] = !empty($r) ? $r : null;
 
                             if ($db_table === 'shop_sets') {
                                 if (str_slug($r) == 'data') $return['data_head'][] = 'data_ru';
@@ -187,8 +191,15 @@ class ShopController extends Controller
 
                     foreach ($re as $k => $t) {
 
+                        // $k = camel_case(str_slug($k0));
+
                         if (!empty($return['data_head'][$k])) {
 
+                            if( $return['data_head'][$k] == 'foto' && strpos( $t , '+' ) ){
+                                $ee = explode('+',$t);
+                                $t = $ee[0];
+                            }
+                            
                             // если цифра рублей ( 2 знака после , )
                             if (in_array( $return['data_head'][$k] , self::$polya_number_rub) !== false ) {
                                 $in[$return['data_head'][$k]] = round( str_replace( [ ',' , '\''] , [ '.', '' ] , trim($t) ),2);
@@ -201,6 +212,7 @@ class ShopController extends Controller
                                 elseif ($return['data_head'][$k] === 'datadokp') $in['datadokp_ru'] = date('Y-m-d', strtotime(substr($t, 0, 6) . '20' . substr($t, 6, 2)));
                             }
                         }
+
                     }
 
                     $return['data_rows'][] = $in;
