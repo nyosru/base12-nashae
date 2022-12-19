@@ -5,9 +5,11 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\BackwordController;
 use App\Http\Controllers\ShopController;
+use App\Http\Resources\OcbsResource;
 use App\Http\Resources\PageResource;
 use App\Http\Resources\PotrebsResource;
 use App\Http\Resources\ShopPaysResource;
+use App\Models\Ocbs;
 use App\Models\Page;
 use App\Models\Pays;
 use App\Models\Pots;
@@ -29,6 +31,9 @@ Route::get('parser', [ShopController::class, 'parsingDataFiles']);
 
 // Route::group(['middleware' => 'auth'], function () {
     Route::get('shopPays', fn () => new ShopPaysResource(Pays::all()))
+        // ->middleware('auth')
+    ;
+    Route::get('ocbs', fn () => new OcbsResource(Ocbs::all()))
         // ->middleware('auth')
     ;
 // });

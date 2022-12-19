@@ -12,6 +12,7 @@ import Page from './components/PageComponent.vue'
 // import FormReg from "./components/pages/RegFormComponent.vue";
 import Rega from './components/formReg/Base.vue'
 import ParticipationComponent from './components/VitrinParticipation/BodyComponent.vue'
+import Participation2Component from './components/VitrinParticipation2/BodyComponent.vue'
 
 export default [
     // { path: "/", component: Home, name: 'Home' },
@@ -59,6 +60,7 @@ export default [
     { path: '/trebs', component: Trebs, name: 'Trebs' },
 
     { path: '/participation', component: ParticipationComponent, name: 'Participation' },
+    { path: '/participation2', component: Participation2Component, name: 'Participation' },
 
     {
         path: '/balance',

@@ -12,6 +12,17 @@ use Illuminate\Support\Facades\DB;
 
 class ShopController extends Controller
 {
+
+    /** поля которые приводим к цифре */
+    static public $polya_number_rub = [
+        'debet-na-naclo-perioda',
+        'kredit-na-naclo-perioda',
+        'oborot-debet',
+        'oborot-kredit',
+        'debet-na-konec-perioda',
+        'kredit-na-konec-perioda'
+    ];
+
     /**
      * Display a listing of the resource.
      *
@@ -177,7 +188,13 @@ class ShopController extends Controller
                     foreach ($re as $k => $t) {
 
                         if (!empty($return['data_head'][$k])) {
-                            $in[$return['data_head'][$k]] = trim($t);
+
+                            // если цифра рублей ( 2 знака после , )
+                            if (in_array( $return['data_head'][$k] , self::$polya_number_rub) !== false ) {
+                                $in[$return['data_head'][$k]] = round( str_replace( [ ',' , '\''] , [ '.', '' ] , trim($t) ),2);
+                            } else {
+                                $in[$return['data_head'][$k]] = trim($t);
+                            }
 
                             if ($db_table === 'shop_sets') {
                                 if ($return['data_head'][$k] === 'data') $in['data_ru'] = date('Y-m-d', strtotime(substr($t, 0, 6) . '20' . substr($t, 6, 2)));

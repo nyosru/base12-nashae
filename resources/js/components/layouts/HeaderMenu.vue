@@ -88,6 +88,12 @@ const menu = [
     type: 'PageText',
     onAuth: true,
   },
+  {
+    name: 'Ваше участие2',
+    level: 'participation2',
+    type: 'PageText',
+    onAuth: true,
+  },
 ]
 
 //     return {
