@@ -1,5 +1,5 @@
 <template>
-  <div class="container" style="min-height: 60vh;">
+  <div class="container-fluid" style="min-height: 60vh;">
     <div class="row" v-if="loading">
       <div class="col-12 text-center">
         <br />
@@ -10,7 +10,7 @@
     </div>
     <div v-else class="row">
       <div class="col-12">
-        <div class="container">
+        <div class="container-fluid">
           <div class="row">
             <div class="col-12 col-md-6">
               <fieldset>
@@ -94,12 +94,56 @@
                       <br />
                       затея
                     </td>
-                    <td>дебет начало</td>
-                    <td>кредит начало</td>
-                    <td>дебит оборот</td>
-                    <td>кредит оборот</td>
-                    <td>дебит конец</td>
-                    <td>кредит конец</td>
+
+                    <!-- <td class="d-none d-md-table-cell"> -->
+                    <!-- <td class="d-table-cell d-md-none"> -->
+
+                    <td>
+                      <span class="d-none d-md-table-cell">
+                        дебет начало
+                      </span>
+                      <span class="d-table-cell d-md-none">
+                        дебет
+                        <br />
+                        кредит
+                        <br />
+                        (начало)
+                      </span>
+                    </td>
+                    <td>
+                      <span class="d-none d-md-table-cell">
+                        кредит начало
+                      </span>
+                      <span class="d-table-cell d-md-none">
+                        дебет
+                        <br />
+                        кредит
+                        <br />
+                        (оборот)
+                      </span>
+                    </td>
+                    <td>
+                      <span class="d-none d-md-table-cell">
+                        дебит оборот
+                      </span>
+                      <span class="d-table-cell d-md-none">
+                        дебет
+                        <br />
+                        кредит
+                        <br />
+                        (конец)
+                      </span>
+                    </td>
+
+                    <td class="d-none d-md-table-cell">
+                      кредит оборот
+                    </td>
+                    <td class="d-none d-md-table-cell">
+                      дебит конец
+                    </td>
+                    <td class="d-none d-md-table-cell">
+                      кредит конец
+                    </td>
                   </tr>
                 </thead>
                 <tbody>
@@ -170,87 +214,41 @@
                     <td>
                       Итого:
                     </td>
-                    <td>{{ new Intl.NumberFormat('ru').format(summ1) }}</td>
-                    <td>{{ new Intl.NumberFormat('ru').format(summ2) }}</td>
-                    <td>{{ new Intl.NumberFormat('ru').format(summ3) }}</td>
-                    <td>{{ new Intl.NumberFormat('ru').format(summ4) }}</td>
-                    <td>{{ new Intl.NumberFormat('ru').format(summ5) }}</td>
-                    <td>{{ new Intl.NumberFormat('ru').format(summ6) }}</td>
+                    <td class="d-none d-md-table-cell">
+                      {{ new Intl.NumberFormat('ru').format(summ1) }}
+                    </td>
+                    <td class="d-table-cell d-md-none">
+                      {{ new Intl.NumberFormat('ru').format(summ1) }}
+                      <br />
+                      {{ new Intl.NumberFormat('ru').format(summ2) }}
+                    </td>
+                    <td class="d-none d-md-table-cell">
+                      {{ new Intl.NumberFormat('ru').format(summ2) }}
+                    </td>
+                    <td class="d-table-cell d-md-none">
+                      {{ new Intl.NumberFormat('ru').format(summ3) }}
+                      <br />
+                      {{ new Intl.NumberFormat('ru').format(summ4) }}
+                    </td>
+                    <td class="d-none d-md-table-cell">
+                      {{ new Intl.NumberFormat('ru').format(summ3) }}
+                    </td>
+                    <td class="d-table-cell d-md-none">
+                      {{ new Intl.NumberFormat('ru').format(summ5) }}
+                      <br />
+                      {{ new Intl.NumberFormat('ru').format(summ6) }}
+                    </td>
+                    <td class="d-none d-md-table-cell">
+                      {{ new Intl.NumberFormat('ru').format(summ4) }}
+                    </td>
+                    <td class="d-none d-md-table-cell">
+                      {{ new Intl.NumberFormat('ru').format(summ5) }}
+                    </td>
+                    <td class="d-none d-md-table-cell">
+                      {{ new Intl.NumberFormat('ru').format(summ6) }}
+                    </td>
                   </tr>
                 </tfoot>
-              </table>
-            </div>
-
-            <div class="col-12"></div>
-
-            <div class="col-12"></div>
-          </div>
-          <div class="row" v-if="1 == 2">
-            <div class="col-12">
-              <!-- <div class="container">
-          <br />
-          <br />
-          <div class="row" style="border-bottom: 1px solid gray">
-            <div class="col-2"><b>счёт / НАименование</b></div>
-            <div class="col"><b>НП Дебет</b></div>
-            <div class="col"><b>НП Кредит</b></div>
-            <div class="col"><b>Оборот Дебет</b></div>
-            <div class="col"><b>Оборот Кредит</b></div>
-            <div class="col"><b>КП Дебет</b></div>
-            <div class="col"><b>КП Кредит</b></div>
-          </div>
-
-          <row v-for="el in pageData" :key="el.id" :el="el"></row>
-
-        </div>
-
-        <br />
-        <br /> -->
-
-              <!-- <pre>pageData {{ pageData }}</pre > -->
-              <!-- <pre>headUnique {{ headUnique }}</pre> -->
-              <!-- filterFirm : {{ filterFirm }} -->
-
-              <div class="btn-list">
-                <h3 v-if="!filterFirm.length">
-                  Выберите кооператив
-                </h3>
-                <h3 v-else>Кооператив</h3>
-
-                <div class="div-top-3">
-                  <button
-                    v-for="k in headUnique"
-                    :key="k"
-                    class="btn btn-sm"
-                    :class="
-                      filterFirm == k ? 'btn-success' : 'btn-outline-success'
-                    "
-                    @click="filterFirm = k"
-                  >
-                    {{ k }}
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div v-if="1 == 2" class="row justify-content-center">
-            <div class="col-12 col-md-10 col-lg-9 col-xl-6">
-              <table
-                v-if="pageData2.length"
-                class="table table-bordered table-striped"
-              >
-                <thead>
-                  <tr>
-                    <!-- <th>Кооператив</th> -->
-                    <th>Действие</th>
-                    <th>Потребление</th>
-                    <th>Вклад</th>
-                  </tr>
-                </thead>
-
-                <tbody>
-                  <row v-for="el in pageData2" :key="el.id" :el="el"></row>
-                </tbody>
               </table>
             </div>
           </div>

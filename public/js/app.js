@@ -26582,7 +26582,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "container",
+  "class": "container-fluid",
   style: {
     "min-height": "60vh"
   }
@@ -26607,7 +26607,7 @@ var _hoisted_6 = {
   "class": "col-12"
 };
 var _hoisted_7 = {
-  "class": "container"
+  "class": "container-fluid"
 };
 var _hoisted_8 = {
   "class": "row"
@@ -26645,47 +26645,56 @@ var _hoisted_24 = {
 var _hoisted_25 = {
   "class": "table table-striped"
 };
-var _hoisted_26 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("thead", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" счет "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" организация "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" затея ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "дебет начало"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "кредит начало"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "дебит оборот"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "кредит оборот"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "дебит конец"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "кредит конец")])], -1 /* HOISTED */);
+var _hoisted_26 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("thead", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" счет "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" организация "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" затея ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <td class=\"d-none d-md-table-cell\"> "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <td class=\"d-table-cell d-md-none\"> "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "d-none d-md-table-cell"
+}, " дебет начало "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "d-table-cell d-md-none"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" дебет "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" кредит "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" (начало) ")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "d-none d-md-table-cell"
+}, " кредит начало "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "d-table-cell d-md-none"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" дебет "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" кредит "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" (оборот) ")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "d-none d-md-table-cell"
+}, " дебит оборот "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "d-table-cell d-md-none"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" дебет "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" кредит "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" (конец) ")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", {
+  "class": "d-none d-md-table-cell"
+}, " кредит оборот "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", {
+  "class": "d-none d-md-table-cell"
+}, " дебит конец "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", {
+  "class": "d-none d-md-table-cell"
+}, " кредит конец ")])], -1 /* HOISTED */);
 var _hoisted_27 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, " Итого: ", -1 /* HOISTED */);
-var _hoisted_28 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "col-12"
-}, null, -1 /* HOISTED */);
-var _hoisted_29 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "col-12"
-}, null, -1 /* HOISTED */);
-var _hoisted_30 = {
-  key: 0,
-  "class": "row"
+var _hoisted_28 = {
+  "class": "d-none d-md-table-cell"
 };
+var _hoisted_29 = {
+  "class": "d-table-cell d-md-none"
+};
+var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
 var _hoisted_31 = {
-  "class": "col-12"
+  "class": "d-none d-md-table-cell"
 };
 var _hoisted_32 = {
-  "class": "btn-list"
+  "class": "d-table-cell d-md-none"
 };
-var _hoisted_33 = {
-  key: 0
-};
+var _hoisted_33 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
 var _hoisted_34 = {
-  key: 1
+  "class": "d-none d-md-table-cell"
 };
 var _hoisted_35 = {
-  "class": "div-top-3"
+  "class": "d-table-cell d-md-none"
 };
-var _hoisted_36 = ["onClick"];
+var _hoisted_36 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
 var _hoisted_37 = {
-  key: 1,
-  "class": "row justify-content-center"
+  "class": "d-none d-md-table-cell"
 };
 var _hoisted_38 = {
-  "class": "col-12 col-md-10 col-lg-9 col-xl-6"
+  "class": "d-none d-md-table-cell"
 };
 var _hoisted_39 = {
-  key: 0,
-  "class": "table table-bordered table-striped"
+  "class": "d-none d-md-table-cell"
 };
-var _hoisted_40 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("thead", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <th>Кооператив</th> "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Действие"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Потребление"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Вклад")])], -1 /* HOISTED */);
-
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [$setup.loading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_2, _hoisted_4)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("fieldset", null, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, [_hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
@@ -26724,7 +26733,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       key: el.id,
       el: el
     }, null, 8 /* PROPS */, ["el"]);
-  }), 128 /* KEYED_FRAGMENT */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <tr>\n                    <td>\n                      счет\n                      <br />\n                      организация\n                      <br />\n                      затея\n                    </td>\n                    <td>дебет нач</td>\n                    <td>кредит нач</td>\n                    <td>дебит об</td>\n                    <td>кредит об</td>\n                    <td>дебит кон</td>\n                    <td>кредит кон</td>\n                  </tr>\n                  <tr>\n                    <td>\n                      счет\n                      <br />\n                      организация\n                      <br />\n                      затея\n                    </td>\n                    <td>дебет нач</td>\n                    <td>кредит нач</td>\n                    <td>дебит об</td>\n                    <td>кредит об</td>\n                    <td>дебит кон</td>\n                    <td>кредит кон</td>\n                  </tr>\n                  <tr>\n                    <td>\n                      счет\n                      <br />\n                      организация\n                      <br />\n                      затея\n                    </td>\n                    <td>дебет нач</td>\n                    <td>кредит нач</td>\n                    <td>дебит об</td>\n                    <td>кредит об</td>\n                    <td>дебит кон</td>\n                    <td>кредит кон</td>\n                  </tr>\n                  <tr>\n                    <td>\n                      счет\n                      <br />\n                      организация\n                      <br />\n                      затея\n                    </td>\n                    <td>дебет нач</td>\n                    <td>кредит нач</td>\n                    <td>дебит об</td>\n                    <td>кредит об</td>\n                    <td>дебит кон</td>\n                    <td>кредит кон</td>\n                  </tr> ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tfoot", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [_hoisted_27, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(new Intl.NumberFormat('ru').format($setup.summ1)), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(new Intl.NumberFormat('ru').format($setup.summ2)), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(new Intl.NumberFormat('ru').format($setup.summ3)), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(new Intl.NumberFormat('ru').format($setup.summ4)), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(new Intl.NumberFormat('ru').format($setup.summ5)), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(new Intl.NumberFormat('ru').format($setup.summ6)), 1 /* TEXT */)])])])]), _hoisted_28, _hoisted_29]),  false ? (0) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true),  false ? (0) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])]))]);
+  }), 128 /* KEYED_FRAGMENT */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <tr>\n                    <td>\n                      счет\n                      <br />\n                      организация\n                      <br />\n                      затея\n                    </td>\n                    <td>дебет нач</td>\n                    <td>кредит нач</td>\n                    <td>дебит об</td>\n                    <td>кредит об</td>\n                    <td>дебит кон</td>\n                    <td>кредит кон</td>\n                  </tr>\n                  <tr>\n                    <td>\n                      счет\n                      <br />\n                      организация\n                      <br />\n                      затея\n                    </td>\n                    <td>дебет нач</td>\n                    <td>кредит нач</td>\n                    <td>дебит об</td>\n                    <td>кредит об</td>\n                    <td>дебит кон</td>\n                    <td>кредит кон</td>\n                  </tr>\n                  <tr>\n                    <td>\n                      счет\n                      <br />\n                      организация\n                      <br />\n                      затея\n                    </td>\n                    <td>дебет нач</td>\n                    <td>кредит нач</td>\n                    <td>дебит об</td>\n                    <td>кредит об</td>\n                    <td>дебит кон</td>\n                    <td>кредит кон</td>\n                  </tr>\n                  <tr>\n                    <td>\n                      счет\n                      <br />\n                      организация\n                      <br />\n                      затея\n                    </td>\n                    <td>дебет нач</td>\n                    <td>кредит нач</td>\n                    <td>дебит об</td>\n                    <td>кредит об</td>\n                    <td>дебит кон</td>\n                    <td>кредит кон</td>\n                  </tr> ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tfoot", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [_hoisted_27, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_28, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(new Intl.NumberFormat('ru').format($setup.summ1)), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_29, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(new Intl.NumberFormat('ru').format($setup.summ1)) + " ", 1 /* TEXT */), _hoisted_30, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(new Intl.NumberFormat('ru').format($setup.summ2)), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_31, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(new Intl.NumberFormat('ru').format($setup.summ2)), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_32, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(new Intl.NumberFormat('ru').format($setup.summ3)) + " ", 1 /* TEXT */), _hoisted_33, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(new Intl.NumberFormat('ru').format($setup.summ4)), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_34, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(new Intl.NumberFormat('ru').format($setup.summ3)), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_35, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(new Intl.NumberFormat('ru').format($setup.summ5)) + " ", 1 /* TEXT */), _hoisted_36, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(new Intl.NumberFormat('ru').format($setup.summ6)), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_37, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(new Intl.NumberFormat('ru').format($setup.summ4)), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_38, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(new Intl.NumberFormat('ru').format($setup.summ5)), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_39, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(new Intl.NumberFormat('ru').format($setup.summ6)), 1 /* TEXT */)])])])])])])])]))]);
 }
 
 /***/ }),
@@ -26752,25 +26761,43 @@ var _hoisted_2 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
 });
 var _hoisted_3 = {
-  "class": "trr"
+  "class": "trr d-table-cell d-md-none"
 };
-var _hoisted_4 = {
-  "class": "trr"
-};
+var _hoisted_4 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
+});
 var _hoisted_5 = {
-  "class": "trr"
+  "class": "trr d-none d-md-table-cell"
 };
 var _hoisted_6 = {
-  "class": "trr"
+  "class": "trr d-table-cell d-md-none"
 };
-var _hoisted_7 = {
-  "class": "trr"
-};
+var _hoisted_7 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
+});
 var _hoisted_8 = {
-  "class": "trr"
+  "class": "trr d-none d-md-table-cell"
+};
+var _hoisted_9 = {
+  "class": "trr d-table-cell d-md-none"
+};
+var _hoisted_10 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
+});
+var _hoisted_11 = {
+  "class": "trr d-none d-md-table-cell"
+};
+var _hoisted_12 = {
+  "class": "trr d-none d-md-table-cell"
+};
+var _hoisted_13 = {
+  "class": "trr d-none d-md-table-cell"
+};
+var _hoisted_14 = {
+  "class": "trr d-none d-md-table-cell"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <tr>\n    <td>\n      счет\n      <br />\n      организация\n      <br />\n      затея\n    </td>\n    <td>дебет нач</td>\n    <td>кредит нач</td>\n    <td>дебит об</td>\n    <td>кредит об</td>\n    <td>дебит кон</td>\n    <td>кредит кон</td>\n  </tr> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <td>{{ el.firma }}</td> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <td>{{ el.dokument }}</td> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <span @click=\"show1 = !show1\">        {{ el.id }}            </span>      <pre v-if=\"show1\">{{ el }}</pre> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" el: {{  el }} <br/> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" счет №" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.el['nomerSceta']) + " ", 1 /* TEXT */), _hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.el.firma) + " ", 1 /* TEXT */), _hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.el.zateya), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <td class=\"trr\">{{ el.debet.length ? el.debet : '-' }}</td> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <td class=\"trr\">{{ el.kredit.length ? el.kredit : '-' }}</td> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.el['debetNaNacloPerioda'].length && $props.el['debetNaNacloPerioda'] != 0 ? new Intl.NumberFormat("ru").format($props.el['debetNaNacloPerioda']) : '-'), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <br />      {{ el['debetNaNacloPerioda'] }} ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.el['kreditNaNacloPerioda'].length && $props.el['kreditNaNacloPerioda'] != 0 ? new Intl.NumberFormat("ru").format($props.el['kreditNaNacloPerioda']) : '-'), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <br />      {{ el['kreditNaNacloPerioda'] }} ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.el['oborotDebet'].length && $props.el['oborotDebet'] != 0 ? new Intl.NumberFormat("ru").format($props.el['oborotDebet']) : '-'), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <br />      {{ el['oborotDebet'] }} ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.el['oborotKredit'].length && $props.el['oborotKredit'] != 0 ? new Intl.NumberFormat("ru").format($props.el['oborotKredit']) : '-'), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <br />      {{ el['oborotKredit'] }} ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.el['debetNaKonecPerioda'].length && $props.el['debetNaKonecPerioda'] != 0 ? new Intl.NumberFormat("ru").format($props.el['debetNaKonecPerioda']) : '-'), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <br />      {{ el['debetNaKonecPerioda'] }} ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.el['kreditNaKonecPerioda'].length && $props.el['kreditNaKonecPerioda'] != 0 ? new Intl.NumberFormat("ru").format($props.el['kreditNaKonecPerioda']) : '-'), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <br />      {{ el['kreditNaKonecPerioda'] }} ")])])], 2112 /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */);
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <tr>\n    <td>\n      счет\n      <br />\n      организация\n      <br />\n      затея\n    </td>\n    <td>дебет нач</td>\n    <td>кредит нач</td>\n    <td>дебит об</td>\n    <td>кредит об</td>\n    <td>дебит кон</td>\n    <td>кредит кон</td>\n  </tr> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <td>{{ el.firma }}</td> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <td>{{ el.dokument }}</td> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <span @click=\"show1 = !show1\">        {{ el.id }}            </span>      <pre v-if=\"show1\">{{ el }}</pre> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" el: {{  el }} <br/> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" счет №" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.el['nomerSceta']) + " ", 1 /* TEXT */), _hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.el.firma) + " ", 1 /* TEXT */), _hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.el.zateya), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 1 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.el['debetNaNacloPerioda'].length && $props.el['debetNaNacloPerioda'] != 0 ? new Intl.NumberFormat('ru').format($props.el['debetNaNacloPerioda']) : '-') + " ", 1 /* TEXT */), _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.el['kreditNaNacloPerioda'].length && $props.el['kreditNaNacloPerioda'] != 0 ? new Intl.NumberFormat('ru').format($props.el['kreditNaNacloPerioda']) : '-'), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.el['debetNaNacloPerioda'].length && $props.el['debetNaNacloPerioda'] != 0 ? new Intl.NumberFormat('ru').format($props.el['debetNaNacloPerioda']) : '-'), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 2 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.el['oborotDebet'].length && $props.el['oborotDebet'] != 0 ? new Intl.NumberFormat('ru').format($props.el['oborotDebet']) : '-') + " ", 1 /* TEXT */), _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.el['oborotKredit'].length && $props.el['oborotKredit'] != 0 ? new Intl.NumberFormat('ru').format($props.el['oborotKredit']) : '-'), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.el['kreditNaNacloPerioda'].length && $props.el['kreditNaNacloPerioda'] != 0 ? new Intl.NumberFormat('ru').format($props.el['kreditNaNacloPerioda']) : '-'), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 3 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.el['debetNaKonecPerioda'].length && $props.el['debetNaKonecPerioda'] != 0 ? new Intl.NumberFormat('ru').format($props.el['debetNaKonecPerioda']) : '-') + " ", 1 /* TEXT */), _hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.el['kreditNaKonecPerioda'].length && $props.el['kreditNaKonecPerioda'] != 0 ? new Intl.NumberFormat('ru').format($props.el['kreditNaKonecPerioda']) : '-'), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.el['oborotDebet'].length && $props.el['oborotDebet'] != 0 ? new Intl.NumberFormat('ru').format($props.el['oborotDebet']) : '-'), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 4 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.el['oborotKredit'].length && $props.el['oborotKredit'] != 0 ? new Intl.NumberFormat('ru').format($props.el['oborotKredit']) : '-'), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 5 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.el['debetNaKonecPerioda'].length && $props.el['debetNaKonecPerioda'] != 0 ? new Intl.NumberFormat('ru').format($props.el['debetNaKonecPerioda']) : '-'), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 6 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.el['kreditNaKonecPerioda'].length && $props.el['kreditNaKonecPerioda'] != 0 ? new Intl.NumberFormat('ru').format($props.el['kreditNaKonecPerioda']) : '-'), 1 /* TEXT */)])], 2112 /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */);
 }
 
 /***/ }),
@@ -28027,11 +28054,11 @@ var _hoisted_17 = {
   "class": "col-xs-12 pt-2 text-center"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("header", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"container-fluid\"> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"row\"> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"col-xs-12 d-bloc d-sm-none\">\n          222\n          </div> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"col-12 xd-none xd-sm-block\"> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [$setup.userId > 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [$setup.userAvatar.length ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("img", {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("header", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [$setup.userId > 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [$setup.userAvatar.length ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("img", {
     key: 0,
     src: $setup.userAvatar,
     "class": "socAvatar"
-  }, null, 8 /* PROPS */, _hoisted_8)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.userName) + " ", 1 /* TEXT */), _hoisted_9, _hoisted_10])])])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("a", _hoisted_11, _hoisted_14)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <header-menu></header-menu> ")])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" </div> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" </div> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" </div> ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["headerMenu"])])])])], 64 /* STABLE_FRAGMENT */);
+  }, null, 8 /* PROPS */, _hoisted_8)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.userName) + " ", 1 /* TEXT */), _hoisted_9, _hoisted_10])])])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("a", _hoisted_11, _hoisted_14)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <header-menu></header-menu> ")])])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["headerMenu"])])])])], 64 /* STABLE_FRAGMENT */);
 }
 
 /***/ }),

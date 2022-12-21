@@ -1,67 +1,54 @@
 <template>
   <header>
-    <!-- <div class="container-fluid"> -->
-      <!-- <div class="row"> -->
-        <!-- <div class="col-xs-12 d-bloc d-sm-none">
-          222
-          </div> -->
-        <!-- <div class="col-12 xd-none xd-sm-block"> -->
-          <div>
-          <div class="container">
-            <div class="row">
-              <div class="col-4 col-sm-3 col-md-3 col-lg-3 text-center">
-                <a href="/">
-                  <img
-                    src="/img/logo.png"
-                    alt="Народная экономика"
-                    class="logo"
-                  />
-                </a>
-              </div>
-              <div
-                class="col-8 col-sm-9 col-md-9 col-lg-9 xalign-middle text-center d-flex align-items-center"
-              >
-                <div
-                  class="align-self-center text-center"
-                  style="width: 100%; xborder: 1px solid green;"
-                >
-                  <template v-if="userId > 0">
-                    <div class="plaha">
-                      <table style="margin: 0 auto;">
-                        <tr>
-                          <td>
-                            <img
-                              v-if="userAvatar.length"
-                              :src="userAvatar"
-                              class="socAvatar"
-                            />
-                          </td>
-                          <td>
-                            {{ userName }}
-                            <br />
-                            <a href="/logout">
-                              Выйти
-                            </a>
-                          </td>
-                        </tr>
-                      </table>
-                    </div>
-                  </template>
-                  <template v-else>
-                    <a class="plaha" href="/vk/enter">
-                      <img src="/logo/vk.svg" width="32" />
-                      Войти
-                    </a>
-                  </template>
-                  <!-- <header-menu></header-menu> -->
+    <div>
+      <div class="container">
+        <div class="row">
+          <div class="col-4 col-sm-3 col-md-3 col-lg-3 text-center">
+            <a href="/">
+              <img src="/img/logo.png" alt="Народная экономика" class="logo" />
+            </a>
+          </div>
+          <div
+            class="col-8 col-sm-9 col-md-9 col-lg-9 xalign-middle text-center d-flex align-items-center"
+          >
+            <div
+              class="align-self-center text-center"
+              style="width: 100%; xborder: 1px solid green;"
+            >
+              <template v-if="userId > 0">
+                <div class="plaha">
+                  <table style="margin: 0 auto;">
+                    <tr>
+                      <td>
+                        <img
+                          v-if="userAvatar.length"
+                          :src="userAvatar"
+                          class="socAvatar"
+                        />
+                      </td>
+                      <td>
+                        {{ userName }}
+                        <br />
+                        <a href="/logout">
+                          Выйти
+                        </a>
+                      </td>
+                    </tr>
+                  </table>
                 </div>
-              </div>
+              </template>
+              <template v-else>
+                <a class="plaha" href="/vk/enter">
+                  <img src="/logo/vk.svg" width="32" />
+                  Войти
+                </a>
+              </template>
+              <!-- <header-menu></header-menu> -->
             </div>
           </div>
-          </div>
-        <!-- </div> -->
-      <!-- </div> -->
-    <!-- </div> -->
+        </div>
+      </div>
+    </div>
   </header>
 
   <div class="container">
