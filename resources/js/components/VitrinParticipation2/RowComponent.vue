@@ -19,9 +19,7 @@
     <!-- <td>{{ el.firma }}</td> -->
     <!-- <td>{{ el.dokument }}</td> -->
     <td>
-
       <!-- <span @click="show1 = !show1">        {{ el.id }}            </span>      <pre v-if="show1">{{ el }}</pre> -->
-
       <!-- el: {{  el }} <br/> -->
       счет №{{ el['nomerSceta'] }}
       <br />
@@ -31,7 +29,6 @@
     </td>
     <!-- <td class="trr">{{ el.debet.length ? el.debet : '-' }}</td> -->
     <!-- <td class="trr">{{ el.kredit.length ? el.kredit : '-' }}</td> -->
-
     <td  class="trr">
       {{
         el['debetNaNacloPerioda'].length && el['debetNaNacloPerioda'] != 0
