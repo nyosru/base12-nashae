@@ -23,7 +23,7 @@
       <!-- <span @click="show1 = !show1">        {{ el.id }}            </span>      <pre v-if="show1">{{ el }}</pre> -->
 
       <!-- el: {{  el }} <br/> -->
-      {{ el['nomerSceta'] }}
+      счет №{{ el['nomerSceta'] }}
       <br />
       {{ el.firma }}
       <br />

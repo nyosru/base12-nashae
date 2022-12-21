@@ -72,24 +72,24 @@ const menu = [
     level: 'trebs',
     type: 'PageText',
   },
-  {
-    name: 'Наша экономика',
-    level: 'balance',
-    type: 'PageText',
-  },
+  // {
+  //   name: 'Наша экономика',
+  //   level: 'balance',
+  //   type: 'PageText',
+  // },
   {
     name: 'Контакты',
     level: 'contacts',
     type: 'PageText',
   },
+  // {
+  //   name: 'Ваше участие',
+  //   level: 'participation',
+  //   type: 'PageText',
+  //   onAuth: true,
+  // },
   {
-    name: 'Ваше участие',
-    level: 'participation',
-    type: 'PageText',
-    onAuth: true,
-  },
-  {
-    name: 'Ваше участие2',
+    name: 'Наша экономика',
     level: 'participation2',
     type: 'PageText',
     onAuth: true,
