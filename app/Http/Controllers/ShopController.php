@@ -135,7 +135,7 @@ class ShopController extends Controller
             // dd( iconv('cp1251','utf-8',$ee) );
 
             // переименование
-            // Storage::move($file0, $file0 . '.old.' . date('Ymd_his'));
+            Storage::move($file0, $file0 . '.old.' . date('Ymd_his'));
 
             if ($codirovka == 'cp1251') {
                 $dater = iconv('cp1251', 'utf-8', $dater);
