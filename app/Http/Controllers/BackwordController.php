@@ -148,7 +148,8 @@ class BackwordController extends Controller
         // тестовый
         Msg::$admins_id[] = 5152088168;
 
-        Msg::sendTelegramm($text, null, 1);
+        // Msg::sendTelegramm($text, null, 1);
+        Msg::sendTelegramm($text, null, 2);
     }
 
 
