@@ -141,8 +141,13 @@ class BackwordController extends Controller
      */
     public static function sendTelega(string $text)
     {
+
         // вячеслав
         Msg::$admins_id[] = 729843637;
+
+        // тестовый
+        Msg::$admins_id[] = 5152088168;
+
         Msg::sendTelegramm($text, null, 1);
     }
 
