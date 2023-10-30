@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 // Auth::routes();
 
 // Route::get('/', [ CalculateCarStController::class , 'index' ] );
-Route::any('/ss', [CalculateCarStController::class, 'index']);
+//Route::any('/ss', [CalculateCarStController::class, 'index']);
 
 Route::any('/vk/enter', [SocWebController::class, 'enter'])->name('vk-enter');
 Route::any('/vk/call-back', [SocWebController::class, 'callBack'])->name('vk-callback');
