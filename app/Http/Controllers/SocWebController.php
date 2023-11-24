@@ -25,7 +25,7 @@ class SocWebController extends Controller
     {
 
         $user = Socialite::driver('vkontakte')->user();
-        
+
         $data = [];
         $data['email'] = $user->getEmail();
         $data['name'] = $user->getName();
@@ -33,9 +33,12 @@ class SocWebController extends Controller
         $data['nick'] = $user->getNickname();
         $data['socIdVk'] = $user->getId();
 
+        if (empty($data['email']))
+            $data['email'] = $data['socIdVk'] . '@vk.com';
+
         // dd($data);
         $ee = SocEnterController::enter($data);
-       
+
         // dd( __LINE__, $ee );
         // $userNow
         Auth::loginUsingId($ee->id);
