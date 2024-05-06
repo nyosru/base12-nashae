@@ -5,6 +5,7 @@ env:
   VPS_IP: 91.218.230.97
   VPS_USERNAME: root
   DIR: /home/base12-nashae
+  DIR_DOCKER: /home/docker
   GIT_BRANCH: origin/cicd_to_ihc_docker24
 
 
@@ -43,8 +44,9 @@ jobs:
           username: ${{ env.VPS_USERNAME }}
           key: ${{ secrets.DEPLOY_KEY_DOCKER24 }}
           script: |
-            cd ${{ env.DIR }}
+            cd ${{ env.DIR_DOCKER }}
             docker exec -it base12narek npm run prod
+            docker exec -it base12narek composer i --no-dev
 #
 #  deploy_composer_stop:
 #    runs-on: ubuntu-latest
