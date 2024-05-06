@@ -43,6 +43,7 @@ class GoodResource extends JsonResource
         ];
     }
 
+
     function toNormNum($str) {
         $cleaned_str = str_replace(',', '.', $str);
         return round( (float) preg_replace('/[^0-9.]/', '', $cleaned_str),2);
