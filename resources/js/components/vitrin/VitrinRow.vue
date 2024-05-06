@@ -3,7 +3,7 @@
     <div
       class="xcol-xs-12 xcol-sm-4 xcol-md-3 xcol-lg-3 name_item col-8 col-sm-6 col-md-4 xcol-lg-3 col-lg-4 name"
       xclick="show1 = !show1"
-    >
+    >111111
       {{ el.naimenovanie ?? '' }}
       {{ el.dobavka ?? '' }}
 
@@ -86,6 +86,7 @@
 import { computed } from 'vue'
 // import axios from "axios";
 import Vitrin from './../../use/Vitrin.ts'
+import {replace} from 'lodash/string';
 
 export default {
   props: {
@@ -125,14 +126,31 @@ export default {
 
     // const ru = new Intl.NumberFormat("ru").format(amount);
 
-    const showPrice1 = computed(() =>
-      new Intl.NumberFormat('ru').format(Math.ceil(props.el.cena1)),
+    const showPrice1 = computed(() => {
+        // new Intl.NumberFormat('ru').format(Math.ceil(props.el.cena1)),
+        let ff = ''
+            ff = Intl.NumberFormat('ru', {
+                maximumFractionDigits: 2
+            }).format(props.el.cena1) + ' 11111 ' + props.el.cena1
+
+        return ff
+
+        // new parseFloat(props.el.cena1),
+        // new props.el.cena1
+        }
     )
     const showPrice2 = computed(() =>
-      new Intl.NumberFormat('ru').format(Math.ceil(props.el.cena2)),
+      // new Intl.NumberFormat('ru').format(Math.ceil(props.el.cena2)),
+      new Intl.NumberFormat('ru',{
+          maximumFractionDigits: 2
+      }).format(props.el.cena2),
+      // new Intl.NumberFormat('ru').format(props.el.cena2),
     )
     const showPrice3 = computed(() =>
-      new Intl.NumberFormat('ru').format(Math.ceil(props.el.cena3)),
+      // new Intl.NumberFormat('ru').format(Math.ceil(props.el.cena3)),
+      new Intl.NumberFormat('ru',{
+          maximumFractionDigits: 2
+      }).format(props.el.cena3),
     )
 
     return {

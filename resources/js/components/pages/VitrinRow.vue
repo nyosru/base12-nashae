@@ -104,35 +104,20 @@ export default {
 
     good.value[props.el.id] = 0
 
-    // const pageData = ref('');
-
-    // // loading.value = false;
-    // axios
-    // .get(
-    //     "/api47/getVitrin"
-    //     )
-    //     .then((response) => {
-    //     pageData.value = response.data.data;
-    //     })
-    //     .catch((error) => {
-    //     console.log(error);
-    //     // loadError.value = true;
-    //     })
-    //     ;
-
-    // let formatter = new Intl.NumberFormat([locales[, options]]);
-    // formatter.format(number); // форматирование
-
-    // const ru = new Intl.NumberFormat("ru").format(amount);
-
     const showPrice1 = computed(() =>
-      new Intl.NumberFormat('ru').format(Math.ceil(props.el.cena1)),
+      new Intl.NumberFormat('ru',{
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2 }).format(props.el.cena1),
     )
     const showPrice2 = computed(() =>
-      new Intl.NumberFormat('ru').format(Math.ceil(props.el.cena2)),
+      new Intl.NumberFormat('ru',{
+          minimumFractionDigits: 2, maximumFractionDigits: 2
+      }).format(props.el.cena2),
     )
     const showPrice3 = computed(() =>
-      new Intl.NumberFormat('ru').format(Math.ceil(props.el.cena3)),
+      new Intl.NumberFormat('ru',{
+          minimumFractionDigits: 2, maximumFractionDigits: 2
+      }).format(props.el.cena3),
     )
 
     return {
