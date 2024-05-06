@@ -44,7 +44,7 @@ jobs:
           key: ${{ secrets.DEPLOY_KEY_DOCKER24 }}
           script: |
             cd ${{ env.DIR }}
-            npm run prod
+            docker exec -it base12narek npm run prod
 #
 #  deploy_composer_stop:
 #    runs-on: ubuntu-latest
