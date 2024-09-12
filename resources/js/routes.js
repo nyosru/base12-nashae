@@ -25,7 +25,8 @@ export default [
     // { path: "/", component: Page, name: 'Dobro' },
     // { path: "/dobro", component: Page, name: 'Dobro' },
     {
-        path: '/about',
+        // path: '/about',
+        path: '/',
         component: Page,
         name: 'About',
         meta: { type: 'page', name: 'О нас' },
@@ -76,8 +77,10 @@ export default [
     },
     // { path: "/reg", component: FormReg, name: 'FormReg' },
 
-    { path: '/', component: Vitrin, name: 'Vitrin' },
-    { path: '/:any', redirect: { name: 'Vitrin' } },
+    // { path: '/', component: Vitrin, name: 'Vitrin' },
+    { path: '/111', component: Vitrin, name: 'Vitrin' },
+    // { path: '/:any', redirect: { name: 'Vitrin' } },
+    { path: '/:any', redirect: { name: 'About' } },
 
     // { path: "/:any", component: Vitrin, name: 'Vitrin' },
     // { path: "/:any", component: Vitrin, name: 'Vitrin' },

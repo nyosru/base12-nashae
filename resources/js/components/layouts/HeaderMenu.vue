@@ -46,7 +46,8 @@ if (u1 && u1.content > 0) {
 const menu = [
     {
         name: 'О нас',
-        level: 'about',
+        //level: 'about',
+        level: '/',
         type: 'PageText'
     },
     // {

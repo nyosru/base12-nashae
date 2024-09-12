@@ -4,9 +4,9 @@
       <div class="container">
         <div class="row">
           <div class="col-4 col-sm-3 col-md-3 col-lg-3 text-center">
-            <a href="/">
+            <a href="/" class="logos">
 <!--              <img src="/img/logo.png" alt="Народная экономика" class="logo" />-->
-                ЦПУ СВО
+                ЦПУСВО.рф
             </a>
           </div>
           <div
@@ -69,6 +69,15 @@ const { userId, userName, userAvatar } = User()
 </script>
 
 <style scope>
+.logos{
+    display: block;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-size: 3.5rem;
+    text-align: center;
+    font-weight: bold;
+
+}
 .logo {
   padding-top: 1em;
   max-height: 120px;
