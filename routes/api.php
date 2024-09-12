@@ -29,6 +29,10 @@ Route::get('trebs', fn () => new PotrebsResource(Pots::all()));
 Route::get('page/{pageNow}', fn ($pageNow) => new PageResource(Page::findOrFail($pageNow)));
 Route::get('parser', [ShopController::class, 'parsingDataFiles']);
 
+use App\Http\Controllers\CsvParseController;
+
+Route::get('/parse/ocbs', [CsvParseController::class, 'parseCsv']);
+
 // Route::group(['middleware' => 'auth'], function () {
     Route::get('shopPays', fn () => new ShopPaysResource(Pays::all()))
         // ->middleware('auth')

@@ -152,7 +152,8 @@
 </body>
 
 <!-- Scripts -->
-<script src="{{ asset('js/app.js') }}?{{ date('ymdhis') }}" defer></script>
+{{--<script src="{{ asset('js/app.js') }}?{{ date('ymdhis') }}" defer></script>--}}
+<script src="{{ asset('js/app.js') }}" defer></script>
 {{-- {{ date('ymdhis') }} --}}
 
 </html>

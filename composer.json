@@ -12,6 +12,7 @@
         "laravel/helpers": "^1.5",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
+        "league/csv": "^9.16",
         "nyos/msg": "^1.12",
         "socialiteproviders/vkontakte": "^5.0"
     },

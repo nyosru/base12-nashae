@@ -5,7 +5,8 @@
         <div class="row">
           <div class="col-4 col-sm-3 col-md-3 col-lg-3 text-center">
             <a href="/">
-              <img src="/img/logo.png" alt="Народная экономика" class="logo" />
+<!--              <img src="/img/logo.png" alt="Народная экономика" class="logo" />-->
+                ЦПУ СВО
             </a>
           </div>
           <div
